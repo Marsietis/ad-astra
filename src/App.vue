@@ -4,6 +4,10 @@ import logoUrl from '/src/assets/logo.png'
 
 const adventureSection = ref<HTMLElement>()
 const isAdventureVisible = ref(false)
+const programSection = ref<HTMLElement>()
+const isProgramVisible = ref(false)
+const partnersSection = ref<HTMLElement>()
+const isPartnersVisible = ref(false)
 
 onMounted(() => {
   createStars()
@@ -67,13 +71,25 @@ function setupScrollAnimation() {
   observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        isAdventureVisible.value = true
+        if (entry.target === adventureSection.value) {
+          isAdventureVisible.value = true
+        } else if (entry.target === programSection.value) {
+          isProgramVisible.value = true
+        } else if (entry.target === partnersSection.value) {
+          isPartnersVisible.value = true
+        }
       }
     })
   }, observerOptions)
 
   if (adventureSection.value) {
     observer.observe(adventureSection.value)
+  }
+  if (programSection.value) {
+    observer.observe(programSection.value)
+  }
+  if (partnersSection.value) {
+    observer.observe(partnersSection.value)
   }
 }
 
@@ -127,6 +143,100 @@ function scrollToAdventure() {
           primakursiai(-ės) ir naujieji bendruomenės nariai(-ės), bet ir kiekvienas iš 15 fakultetų
           ir daugiau Universiteto bendruomenės narys ir narė. Tad kviečiame nepraleisti progos ir
           kartu su mumis kilti ad astra (į žvaigždes)!
+        </div>
+      </div>
+    </section>
+
+    <section
+      ref="programSection"
+      class="content-section"
+      :class="{ visible: isProgramVisible }"
+    >
+      <div class="content-container">
+        <h2 class="text-white text-7xl font-bold font-sans mb-8 text-left">Festivalio zonos ir programa</h2>
+        <div class="text-white text-xl font-light font-sans mb-6 text-left">
+          Ad Astra festivalis atskleis savo duris keliose srityse, kur kiekvienas dalyvus galės rasti sau įdomių veiklų:
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-gray-800/30 p-6 rounded-lg backdrop-blur-sm">
+            <h3 class="text-yellow-500 text-2xl font-bold mb-4">Mokslinių pranešimų zona</h3>
+            <p class="text-white text-lg font-light">
+              Studentai pristatys savo tyrimų darbus, projektus ir inovatyvius sprendimus. 
+              Puiki galimybė sužinoti, kokius mokslinius pasiekimus daro mūsų bendruomenės nariai.
+            </p>
+          </div>
+          
+          <div class="bg-gray-800/30 p-6 rounded-lg backdrop-blur-sm">
+            <h3 class="text-yellow-500 text-2xl font-bold mb-4">Kontaktų mugė</h3>
+            <p class="text-white text-lg font-light">
+              Susipažinkite su organizacijomis, įmonėmis ir iniciatyvomis, kurios siūlo praktikos 
+              vietas, darbo galimybes ir bendradarbiavimo projektus studentams.
+            </p>
+          </div>
+          
+          <div class="bg-gray-800/30 p-6 rounded-lg backdrop-blur-sm">
+            <h3 class="text-yellow-500 text-2xl font-bold mb-4">Diskusijų zona</h3>
+            <p class="text-white text-lg font-light">
+              Atviros diskusijos aktualiais studentų gyvenimo, mokslo ir bendruomenės klausimais. 
+              Galimybė išreikšti savo nuomonę ir išgirsti kitų argumentus.
+            </p>
+          </div>
+          
+          <div class="bg-gray-800/30 p-6 rounded-lg backdrop-blur-sm">
+            <h3 class="text-yellow-500 text-2xl font-bold mb-4">Koncertinė dalis</h3>
+            <p class="text-white text-lg font-light">
+              Muzikiniai pasirodymai, kurie sukurs šventišką atmosferą ir suburs bendruomenę 
+              bendram kultūriniam patyrimui.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      ref="partnersSection"
+      class="content-section"
+      :class="{ visible: isPartnersVisible }"
+    >
+      <div class="content-container">
+        <h2 class="text-white text-7xl font-bold font-sans mb-8 text-left">Partneriai</h2>
+        <div class="text-white text-xl font-light font-sans mb-8 text-left">
+          Ad Astra festivalis vyksta tik dėka nuolatinio partnerių palaikymo ir bendradarbiavimo. 
+          Dėkojame visiems, kurie prisideda prie šios iniciatyvos sėkmės.
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div class="text-center">
+            <div class="bg-gray-800/30 p-8 rounded-lg backdrop-blur-sm h-32 flex items-center justify-center mb-4">
+              <div class="text-yellow-500 text-3xl font-bold">VU SA</div>
+            </div>
+            <h3 class="text-white text-xl font-bold mb-2">Vilniaus universiteto Studentų atstovybė</h3>
+            <p class="text-white text-sm font-light">Pagrindinis organizatorius ir festivalo iniciatorius</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-gray-800/30 p-8 rounded-lg backdrop-blur-sm h-32 flex items-center justify-center mb-4">
+              <div class="text-yellow-500 text-3xl font-bold">VU</div>
+            </div>
+            <h3 class="text-white text-xl font-bold mb-2">Vilniaus universitetas</h3>
+            <p class="text-white text-sm font-light">Institucinis partneris ir festivalio šeimininkas</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="bg-gray-800/30 p-8 rounded-lg backdrop-blur-sm h-32 flex items-center justify-center mb-4">
+              <div class="text-yellow-500 text-2xl font-bold">Fakultetai</div>
+            </div>
+            <h3 class="text-white text-xl font-bold mb-2">15 VU fakultetų</h3>
+            <p class="text-white text-sm font-light">Aktyvūs dalyviai ir programos formuotojai</p>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <div class="text-white text-lg font-light mb-4">
+            Norite tapti partneru? Susisiekite su mumis ir kartu kurkime puikų renginį!
+          </div>
+          <div class="text-yellow-500 text-xl font-bold">kontaktai@adastra.vu.lt</div>
         </div>
       </div>
     </section>

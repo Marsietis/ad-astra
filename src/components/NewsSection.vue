@@ -43,9 +43,12 @@ const { sectionRef, isVisible } = useScrollAnimation()
             href="https://www.facebook.com/events/ad-astra-2025/"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors duration-200"
+            class="inline-flex items-center justify-center bg-gradient-to-r from-yellow-500 to-yellow-400 text-black px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-yellow-500/25 hover:from-yellow-400 hover:to-yellow-300 transform hover:scale-105 transition-all duration-300 group"
           >
             {{ t.viewEvent }}
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
           </a>
         </div>
 
@@ -71,9 +74,12 @@ const { sectionRef, isVisible } = useScrollAnimation()
             href="https://www.vusa.lt/renginiai/ad-astra-2025/"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors duration-200"
+            class="inline-flex items-center justify-center bg-gradient-to-r from-yellow-500 to-yellow-400 text-black px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-yellow-500/25 hover:from-yellow-400 hover:to-yellow-300 transform hover:scale-105 transition-all duration-300 group"
           >
             {{ t.readMore }}
+            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
           </a>
         </div>
       </div>

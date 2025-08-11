@@ -76,3 +76,62 @@ The application is currently a single-page promotional site with:
 - Components and views directories are empty - all functionality is in App.vue
 - Uses modern Vue 3 Composition API with `<script setup>` syntax
 - Tailwind CSS is configured with PostCSS
+
+## Making Sections Visible
+
+The application uses Intersection Observer API for scroll-triggered animations. When adding new sections, follow these steps to make them visible:
+
+### 1. Add Reactive Variables
+In the `<script setup>` section, add two variables for each new section:
+```typescript
+const newSectionRef = ref<HTMLElement>()
+const isNewSectionVisible = ref(false)
+```
+
+### 2. Update Intersection Observer Logic
+Add the new section to the observer callback in `setupScrollAnimation()`:
+```typescript
+observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // ... existing conditions
+      } else if (entry.target === newSectionRef.value) {
+        isNewSectionVisible.value = true
+      }
+    }
+  })
+}, observerOptions)
+```
+
+### 3. Register Section with Observer
+Add the section to be observed in `setupScrollAnimation()`:
+```typescript
+if (newSectionRef.value) {
+  observer.observe(newSectionRef.value)
+}
+```
+
+### 4. Template Setup
+In the template, add the ref and visibility class binding:
+```vue
+<section
+  ref="newSectionRef"
+  class="content-section"
+  :class="{ visible: isNewSectionVisible }"
+>
+  <!-- section content -->
+</section>
+```
+
+### Required CSS Classes
+Sections must use the `content-section` class which provides:
+- Initial opacity: 0 and transform: translateY(50px)
+- Transition animations for opacity and transform
+- When `.visible` class is added, opacity becomes 1 and transform becomes translateY(0)
+
+### Example Implementation
+For a section called "eventLinks":
+1. `const eventLinksSection = ref<HTMLElement>()`
+2. `const isEventLinksVisible = ref(false)`
+3. Add to observer callback and registration
+4. Use `ref="eventLinksSection"` and `:class="{ visible: isEventLinksVisible }"` in template

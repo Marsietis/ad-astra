@@ -32,7 +32,6 @@ useBackgroundAnimations()
       <NewsSection />
     </div>
 
-
     <div class="layout-container layout-offset-right">
       <OrganizatoriaiSection />
     </div>
@@ -49,7 +48,7 @@ useBackgroundAnimations()
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #000000 0%, #000000 85%, #1a1a2e 95%, #16213e 100%);
+  background: linear-gradient(160deg, #030408 0%, #030408 85%, #080c32 100%);
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
@@ -141,7 +140,18 @@ body {
   width: 12px;
   height: 12px;
   background: white;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
   animation: twinkle-pulse 5s ease-in-out infinite alternate;
 }
 
@@ -186,7 +196,7 @@ body {
   right: 0;
   width: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6));
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6));
   transform-origin: 100% 50%;
   transform: translateY(-50%);
   animation: tail 3s linear forwards;
@@ -206,7 +216,8 @@ body {
   }
   100% {
     opacity: 0;
-    transform: translateX(var(--delta-x, 300px)) translateY(var(--delta-y, 150px)) rotate(var(--rotation, 0deg));
+    transform: translateX(var(--delta-x, 300px)) translateY(var(--delta-y, 150px))
+      rotate(var(--rotation, 0deg));
   }
 }
 
@@ -227,7 +238,6 @@ body {
     width: 0;
   }
 }
-
 
 .background-shapes {
   position: fixed;
@@ -256,8 +266,6 @@ body {
   width: 80px;
   height: 80px;
 }
-
-
 
 .shape:nth-child(2n) {
   animation-duration: 25s;
@@ -338,7 +346,6 @@ body {
   animation: pulse-glow 8s ease-in-out infinite;
 }
 
-
 @keyframes pulse-glow {
   0%,
   100% {
@@ -350,7 +357,6 @@ body {
     transform: scale(1.1);
   }
 }
-
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

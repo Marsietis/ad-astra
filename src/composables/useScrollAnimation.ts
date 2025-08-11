@@ -79,7 +79,7 @@ export function useBackgroundAnimations() {
     shapesContainer.classList.add('background-shapes')
     document.body.appendChild(shapesContainer)
 
-    const shapes = ['circle', 'triangle', 'square', 'diamond']
+    const shapes = ['circle']
 
     for (let i = 0; i < 8; i++) {
       const shape = document.createElement('div')

@@ -16,11 +16,31 @@ useBackgroundAnimations()
   <div id="app">
     <LanguageToggle />
     <HeroSection />
-    <AboutSection />
-    <ProgramSection />
-    <NewsSection />
-    <OrganizatoriaiSection />
-    <PartnersSection />
+
+    <div class="layout-container layout-offset-right">
+      <AboutSection />
+    </div>
+
+    <!-- Floating decorative elements -->
+    <div class="floating-accent accent-1"></div>
+
+    <div class="layout-container layout-offset-left">
+      <ProgramSection />
+    </div>
+
+    <div class="layout-container layout-center-wide">
+      <NewsSection />
+    </div>
+
+
+    <div class="layout-container layout-offset-right">
+      <OrganizatoriaiSection />
+    </div>
+
+    <div class="layout-container layout-full-bleed">
+      <PartnersSection />
+    </div>
+
     <FooterSection />
   </div>
 </template>
@@ -50,18 +70,7 @@ body {
 .star {
   position: absolute;
   background: white;
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
+  border-radius: 50%;
   animation: twinkle 4s ease-in-out infinite alternate;
 }
 
@@ -128,27 +137,7 @@ body {
   height: 80px;
 }
 
-.shape.triangle {
-  width: 0;
-  height: 0;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 50px solid rgba(255, 255, 255, 0.2);
-}
 
-.shape.square {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.15);
-  transform: rotate(15deg);
-}
-
-.shape.diamond {
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.2);
-  transform: rotate(45deg);
-}
 
 .shape:nth-child(2n) {
   animation-duration: 25s;
@@ -183,6 +172,82 @@ body {
   padding: 0 !important;
   display: block !important;
   grid-template-columns: none !important;
+}
+
+/* Layout containers for dynamic positioning */
+.layout-container {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.layout-offset-right {
+  padding-left: 10vw;
+  padding-right: 5vw;
+}
+
+.layout-offset-left {
+  padding-left: 5vw;
+  padding-right: 10vw;
+}
+
+.layout-center-wide {
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+.layout-full-bleed {
+  padding: 0;
+}
+
+/* Floating decorative accents */
+.floating-accent {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.accent-1 {
+  top: 120vh;
+  right: 8vw;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.1);
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .layout-offset-right,
+  .layout-offset-left {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .layout-center-wide {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  .floating-accent {
+    display: none;
+  }
 }
 
 body {

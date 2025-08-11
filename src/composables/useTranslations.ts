@@ -50,6 +50,7 @@ const translations = {
     facultiesPartnerDesc: 'Aktyvūs dalyviai ir programos formuotojai',
     partnershipText: 'Norite tapti partneru? Susisiekite su mumis ir kartu kurkime puikų renginį!',
     contactEmail: 'kontaktai@adastra.vu.lt',
+    organizatoriaiTitle: 'Organizatoriai',
   },
   en: {
     subtitle: 'IN VILNIUS UNIVERSITY',
@@ -97,6 +98,7 @@ const translations = {
     partnershipText:
       "Want to become a partner? Contact us and let's create a great event together!",
     contactEmail: 'contact@adastra.vu.lt',
+    organizatoriaiTitle: 'Organizers',
   },
 }
 

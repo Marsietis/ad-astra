@@ -5,6 +5,7 @@ import AboutSection from '@/components/AboutSection.vue'
 import ProgramSection from '@/components/ProgramSection.vue'
 import NewsSection from '@/components/NewsSection.vue'
 import PartnersSection from '@/components/PartnersSection.vue'
+import OrganizatoriaiSection from '@/components/OrganizatoriaiSection.vue'
 import FooterSection from '@/components/FooterSection.vue'
 import { useBackgroundAnimations } from '@/composables/useScrollAnimation'
 
@@ -18,6 +19,7 @@ useBackgroundAnimations()
     <AboutSection />
     <ProgramSection />
     <NewsSection />
+    <OrganizatoriaiSection />
     <PartnersSection />
     <FooterSection />
   </div>

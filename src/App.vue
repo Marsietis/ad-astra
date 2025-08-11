@@ -86,18 +86,15 @@ function scrollToAdventure() {
   <div id="app">
     <main class="hero-section">
       <div class="hero-content">
-        <div class="flex-1 max-w-2xl">
-          <h1 class="text-yellow-500 text-7xl font-bold font-extrabold mb-8">AD ASTRA</h1>
-          <p class="text-xl mb-8 leading-relaxed opacity-90">
-            Journey to the stars begins here. Explore the infinite possibilities that await beyond
-            our world.
-          </p>
-          <button
-            class="bg-gradient-to-r from-white via-yellow-300 to-orange-500 text-gray-800 font-semibold py-4 px-8 rounded-full text-lg cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-yellow-400/40 relative overflow-hidden"
-            @click="scrollToAdventure"
-          >
-            Start Your Journey
-          </button>
+        <div class="flex-1 max-w-3xl">
+          <h1 class="text-yellow-500 text-7xl font-bold font-extrabold mb-16">AD ASTRA</h1>
+          <div class="text-white text-6xl font-bold font-sans mb-2">VILNIAUS UNIVERSITETE</div>
+          <div class="text-white text-6xl font-light font-sans mb-2">IN VILNIUS UNIVERISTY</div>
+          <div class="text-white text-4xl font-light font-sans mb-2 mt-8">
+            Studentų (-čių) integracijos festivalis
+          </div>
+          <div class="text-white text-4xl font-light font-sans">Students' Integration Festival</div>
+          <div class="text-yellow-500 text-8xl font-extrabold font-sans mt-8">09.05</div>
         </div>
         <div class="flex-1 flex justify-center items-center max-w-lg min-h-96">
           <img
@@ -116,13 +113,21 @@ function scrollToAdventure() {
       :class="{ visible: isAdventureVisible }"
     >
       <div class="content-container">
-        <h2>Your Adventure Awaits</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
+        <h2 class="text-white text-7xl font-bold font-sans mb-8 text-left">Kas yra Ad Astra?</h2>
+        <div class="text-white text-xl font-light font-sans mb-4 text-left">
+          Jau 5 metus skaičiuojanti iniciatyva, pradėta 2020 m. Vilniaus universiteto Studentų
+          atstovybės (VU SA) Universiteto bendruomenėje tapusi jau tradiciniu metiniu renginiu.
+          Šventė pradėta kaip „Diskusijų festivalis“ užaugo į „Ad astra: Integracijos festivalis“
+          išplėsdama savo ribas dabar įtraukiant ir mokslinius pranešimus, VU bendruomenės kontaktų
+          mugę, koncertinę dalį bei kitos programinės dalys.
+        </div>
+        <div class="text-white text-xl font-light font-sans mb-4 text-left">
+          Festivalis „Ad astra“ simboliškai paskutinis renginys žymintis naujų akademinių studijų
+          metų pradžią. Kasmet besikeičiančioje programoje ką nors išsinešti atras ne tik
+          primakursiai(-ės) ir naujieji bendruomenės nariai(-ės), bet ir kiekvienas iš 15 fakultetų
+          ir daugiau Universiteto bendruomenės narys ir narė. Tad kviečiame nepraleisti progos ir
+          kartu su mumis kilti ad astra (į žvaigždes)!
+        </div>
       </div>
     </section>
   </div>
@@ -363,21 +368,6 @@ body {
 .content-container {
   max-width: 800px;
   text-align: center;
-}
-
-.content-container h2 {
-  font-size: 2.5rem;
-  margin: 0 0 2rem 0;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.content-container p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  opacity: 0.8;
 }
 
 @media (min-width: 1200px) {

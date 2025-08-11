@@ -109,6 +109,54 @@ body {
   height: 4px;
 }
 
+.star-svg {
+  width: 20px;
+  height: 20px;
+  background-image: url('@/assets/star.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) invert(1);
+  animation: twinkle-rotate 8s ease-in-out infinite alternate;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+@keyframes twinkle-rotate {
+  0% {
+    opacity: 0.3;
+    transform: rotate(0deg) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    opacity: 0.5;
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.star-5point {
+  width: 12px;
+  height: 12px;
+  background: white;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: twinkle-pulse 5s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle-pulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+
 .background-shapes {
   position: fixed;
   top: 0;

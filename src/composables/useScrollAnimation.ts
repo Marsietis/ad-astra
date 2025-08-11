@@ -60,7 +60,8 @@ export function useBackgroundAnimations() {
     starsContainer.classList.add('stars')
     document.body.appendChild(starsContainer)
 
-    for (let i = 0; i < 200; i++) {
+    // Create regular dot stars
+    for (let i = 0; i < 180; i++) {
       const star = document.createElement('div')
       const sizes = ['star-tiny', 'star-small']
       const randomSize = sizes[Math.floor(Math.random() * sizes.length)]
@@ -71,6 +72,30 @@ export function useBackgroundAnimations() {
       star.style.animationDelay = Math.random() * 4 + 's'
 
       starsContainer.appendChild(star)
+    }
+
+    // Create SVG stars using the star.svg file
+    for (let i = 0; i < 15; i++) {
+      const svgStar = document.createElement('div')
+      svgStar.classList.add('star', 'star-svg')
+      
+      svgStar.style.left = Math.random() * 100 + '%'
+      svgStar.style.top = Math.random() * 100 + '%'
+      svgStar.style.animationDelay = Math.random() * 8 + 's'
+
+      starsContainer.appendChild(svgStar)
+    }
+
+    // Create 5-point CSS stars
+    for (let i = 0; i < 25; i++) {
+      const fivePointStar = document.createElement('div')
+      fivePointStar.classList.add('star', 'star-5point')
+      
+      fivePointStar.style.left = Math.random() * 100 + '%'
+      fivePointStar.style.top = Math.random() * 100 + '%'
+      fivePointStar.style.animationDelay = Math.random() * 5 + 's'
+
+      starsContainer.appendChild(fivePointStar)
     }
   }
 

@@ -156,6 +156,78 @@ body {
   }
 }
 
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: shoot 3s linear forwards;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, white);
+  transform-origin: 100% 50%;
+  transform: translateY(-50%);
+  animation: tail 3s linear forwards;
+}
+
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6));
+  transform-origin: 100% 50%;
+  transform: translateY(-50%);
+  animation: tail 3s linear forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes shoot {
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(0) rotate(var(--rotation, 0deg));
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(var(--delta-x, 300px)) translateY(var(--delta-y, 150px)) rotate(var(--rotation, 0deg));
+  }
+}
+
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 0;
+  }
+  50% {
+    width: 40px;
+  }
+  90% {
+    width: 40px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
 
 .background-shapes {
   position: fixed;

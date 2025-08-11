@@ -45,7 +45,7 @@ export function useScrollAnimation() {
 
   return {
     sectionRef,
-    isVisible
+    isVisible,
   }
 }
 
@@ -53,6 +53,7 @@ export function useBackgroundAnimations() {
   onMounted(() => {
     createStars()
     createShapes()
+    createShootingStars()
   })
 
   function createStars() {
@@ -78,7 +79,7 @@ export function useBackgroundAnimations() {
     for (let i = 0; i < 15; i++) {
       const svgStar = document.createElement('div')
       svgStar.classList.add('star', 'star-svg')
-      
+
       svgStar.style.left = Math.random() * 100 + '%'
       svgStar.style.top = Math.random() * 100 + '%'
       svgStar.style.animationDelay = Math.random() * 8 + 's'
@@ -90,13 +91,81 @@ export function useBackgroundAnimations() {
     for (let i = 0; i < 25; i++) {
       const fivePointStar = document.createElement('div')
       fivePointStar.classList.add('star', 'star-5point')
-      
+
       fivePointStar.style.left = Math.random() * 100 + '%'
       fivePointStar.style.top = Math.random() * 100 + '%'
       fivePointStar.style.animationDelay = Math.random() * 5 + 's'
 
       starsContainer.appendChild(fivePointStar)
     }
+  }
+
+  function createShootingStars() {
+    const createShootingStar = () => {
+      const shootingStar = document.createElement('div')
+      shootingStar.classList.add('shooting-star')
+
+      // Random direction: 0=left-to-right, 1=right-to-left, 2=top-to-bottom, 3=bottom-to-top
+      const direction = Math.floor(Math.random() * 4)
+      let startX, startY, deltaX, deltaY, rotation
+
+      switch (direction) {
+        case 0: // Left to right
+          startX = Math.random() * -100 - 50
+          startY = Math.random() * 100
+          deltaX = 200 + Math.random() * 400
+          deltaY = (Math.random() - 0.5) * 200
+          rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
+          break
+        case 1: // Right to left
+          startX = window.innerWidth + Math.random() * 100 + 50
+          startY = Math.random() * 100
+          deltaX = -(200 + Math.random() * 400)
+          deltaY = (Math.random() - 0.5) * 200
+          rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
+          break
+        case 2: // Top to bottom
+          startX = Math.random() * 100
+          startY = Math.random() * -100 - 50
+          deltaX = (Math.random() - 0.5) * 200
+          deltaY = 200 + Math.random() * 400
+          rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
+          break
+        case 3: // Bottom to top
+          startX = Math.random() * 100
+          startY = window.innerHeight + Math.random() * 100 + 50
+          deltaX = (Math.random() - 0.5) * 200
+          deltaY = -(200 + Math.random() * 400)
+          rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
+          break
+      }
+
+      shootingStar.style.left = startX + (direction < 2 ? 'px' : '%')
+      shootingStar.style.top = startY + (direction >= 2 ? 'px' : '%')
+
+      shootingStar.style.setProperty('--delta-x', deltaX + 'px')
+      shootingStar.style.setProperty('--delta-y', deltaY + 'px')
+      shootingStar.style.setProperty('--rotation', rotation + 'deg')
+
+      document.body.appendChild(shootingStar)
+
+      // Remove the shooting star after animation
+      setTimeout(() => {
+        if (shootingStar.parentNode) {
+          shootingStar.parentNode.removeChild(shootingStar)
+        }
+      }, 3000)
+    }
+
+    // Create shooting stars at random intervals
+    const shootingStarInterval = () => {
+      createShootingStar()
+      const nextInterval = 8000 + Math.random() * 12000 // 8-20 seconds
+      setTimeout(shootingStarInterval, nextInterval)
+    }
+
+    // Start the first shooting star after a random delay
+    setTimeout(shootingStarInterval, Math.random() * 5000)
   }
 
   function createShapes() {

@@ -34,16 +34,16 @@ const translations = {
     programTitle: 'Festivalio zonos ir programa',
     programDescription:
       'Ad Astra festivalis atskleis savo duris keliose srityse, kur kiekvienas dalyvs galės rasti sau įdomių veiklų:',
-    scientificZone: 'Mokslinių pranešimų zona',
+    scientificZone: 'Moksliniai pranešimai',
     scientificZoneDesc:
       'Studentai pristatys savo tyrimų darbus, projektus ir inovatyvius sprendimus. Puiki galimybė sužinoti, kokius mokslinius pasiekimus daro mūsų bendruomenės nariai.',
     contactFair: 'Kontaktų mugė',
     contactFairDesc:
       'Susipažinkite su organizacijomis, įmonėmis ir iniciatyvomis, kurios siūlo praktikos vietas, darbo galimybes ir bendradarbiavimo projektus studentams.',
-    discussionZone: 'Diskusijų zona',
+    discussionZone: 'Diskusijos',
     discussionZoneDesc:
       'Atviros diskusijos aktualiais studentų gyvenimo, mokslo ir bendruomenės klausimais. Galimybė išreikšti savo nuomonę ir išgirsti kitų argumentus.',
-    concertPart: 'Koncertinė dalis',
+    concertPart: 'Koncertas',
     concertPartDesc:
       'Muzikiniai pasirodymai, kurie sukurs šventišką atmosferą ir suburs bendruomenę bendram kultūriniam patyrimui.',
     newsTitle: 'Sekite naujienas apie renginį',
@@ -109,16 +109,16 @@ const translations = {
     programTitle: 'Festival Zones and Program',
     programDescription:
       'The Ad Astra festival will open its doors in several areas where each participant can find interesting activities:',
-    scientificZone: 'Scientific Presentations Zone',
+    scientificZone: 'Scientific Presentations',
     scientificZoneDesc:
       'Students will present their research work, projects and innovative solutions. A great opportunity to learn about the scientific achievements of our community members.',
     contactFair: 'Contact Fair',
     contactFairDesc:
       'Meet organizations, companies and initiatives that offer internships, job opportunities and collaboration projects for students.',
-    discussionZone: 'Discussion Zone',
+    discussionZone: 'Discussions',
     discussionZoneDesc:
       'Open discussions on current student life, science and community issues. An opportunity to express your opinion and hear other arguments.',
-    concertPart: 'Concert Program',
+    concertPart: 'Concert',
     concertPartDesc:
       'Musical performances that will create a festive atmosphere and bring the community together for a shared cultural experience.',
     newsTitle: 'Follow News and Updates',

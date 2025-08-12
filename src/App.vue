@@ -47,7 +47,7 @@ useBackgroundAnimations()
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(160deg, #030408 0%, #030408 70%, #080c32 100%);
+  background: linear-gradient(160deg, #030408 0%, #030408 60%, #080c32 100%);
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
@@ -445,12 +445,12 @@ body {
     width: 16px;
     height: 16px;
   }
-  
+
   .star-5point {
     width: 6px;
     height: 6px;
   }
-  
+
   .star-xl,
   .star-xxl,
   .star-lg-plus {
@@ -458,7 +458,7 @@ body {
     height: 3px;
     filter: blur(1px);
   }
-  
+
   .shooting-star::before,
   .shooting-star::after {
     animation: tail-mobile 3s linear forwards;
@@ -466,11 +466,21 @@ body {
 }
 
 @keyframes tail-mobile {
-  0% { width: 0; }
-  10% { width: 0; }
-  50% { width: 20px; }
-  90% { width: 20px; }
-  100% { width: 0; }
+  0% {
+    width: 0;
+  }
+  10% {
+    width: 0;
+  }
+  50% {
+    width: 20px;
+  }
+  90% {
+    width: 20px;
+  }
+  100% {
+    width: 0;
+  }
 }
 
 /* Responsive adjustments */

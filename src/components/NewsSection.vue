@@ -25,9 +25,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div
-            class="bg-gray-800/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-gray-800/50 hover:border-amber-400/30 transition-all duration-300"
-          >
+          <div class="border bg-black border-white/10 rounded-2xl p-8 text-center">
             <div class="mb-6">
               <svg class="w-16 h-16 mx-auto text-amber-400" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -62,9 +60,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
             </a>
           </div>
 
-          <div
-            class="bg-gray-800/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-gray-800/50 hover:border-amber-400/30 transition-all duration-300"
-          >
+          <div class="border bg-black border-white/10 rounded-2xl p-8 text-center">
             <div class="mb-6">
               <svg class="w-16 h-16 mx-auto text-amber-400" viewBox="0 0 24 24" fill="currentColor">
                 <path

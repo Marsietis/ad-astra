@@ -69,7 +69,7 @@ export function useBackgroundAnimations() {
     document.body.appendChild(starsContainer)
 
     // Create regular dot stars with weighted size distribution
-    for (let i = 0; i < 350; i++) {
+    for (let i = 0; i < 1000; i++) {
       const star = document.createElement('div')
 
       // Weighted size distribution (realistic star field with more tiny stars)

@@ -13,28 +13,28 @@ const { sectionRef, isVisible } = useScrollAnimation()
     class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out"
     :class="{ 'opacity-100 translate-y-0': isVisible }"
   >
-    <div class="max-w-full mx-auto px-2 sm:px-4 ml-48">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[60vh]">
-        <div class="relative z-10">
-          <h2 class="text-4xl lg:text-5xl font-bold text-white mb-8 ml-24 text-left">
+        <div class="relative z-10 text-center lg:text-left">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 lg:mb-8">
             {{ t.whatIsAdAstra }}
           </h2>
-          <div class="text-lg lg:text-xl font-light text-white mb-6 ml-24 text-left">
+          <div class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0">
             {{ t.aboutText1 }}
           </div>
-          <div class="text-lg lg:text-xl font-light text-white mb-6 ml-24 text-left">
+          <div class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0">
             {{ t.aboutText2 }}
           </div>
-          <div class="text-lg lg:text-xl font-light text-white mb-6 ml-24 text-left">
+          <div class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0">
             {{ t.aboutText3 }}
           </div>
         </div>
-        <div class="relative h-96 lg:h-[400px] flex items-center justify-center">
+        <div class="relative h-64 sm:h-80 lg:h-[400px] flex items-center justify-center order-first lg:order-last">
           <div
-            class="absolute w-48 h-48 lg:w-52 lg:h-52 rounded-full top-1/5 right-1/10 animate-pulse -z-10 accent-glow"
+            class="absolute w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-full top-1/4 right-1/6 lg:top-1/5 lg:right-1/10 animate-pulse -z-10 accent-glow"
           ></div>
           <div
-            class="absolute w-32 h-32 lg:w-36 lg:h-36 rounded-full top-3/5 right-1/4 animate-pulse -z-10 accent-glow-secondary"
+            class="absolute w-20 h-20 sm:w-24 sm:h-24 lg:w-36 lg:h-36 rounded-full top-3/5 right-1/3 lg:right-1/4 animate-pulse -z-10 accent-glow-secondary"
           ></div>
         </div>
       </div>
@@ -84,9 +84,10 @@ const { sectionRef, isVisible } = useScrollAnimation()
 }
 
 @media (max-width: 768px) {
-  .ml-24 {
-    margin-left: 0 !important;
-    text-align: center !important;
+  .accent-glow,
+  .accent-glow-secondary {
+    opacity: 0.1;
+    filter: blur(10px);
   }
 }
 </style>

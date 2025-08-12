@@ -8,26 +8,26 @@ const { showHint } = useScrollHint()
 </script>
 
 <template>
-  <main id="hero" class="min-h-screen flex items-center px-4 lg:px-8 relative">
+  <main id="hero" class="min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-8 relative pt-20 sm:pt-24 lg:pt-0 lg:items-center">
     <div
-      class="flex items-center justify-between w-full max-w-8xl mx-32 gap-16 flex-col lg:flex-row text-center lg:text-left"
+      class="flex items-center justify-center lg:justify-between w-full max-w-7xl mx-auto gap-8 lg:gap-16 flex-col lg:flex-row text-center lg:text-left"
     >
       <div class="flex-1 max-w-3xl">
         <h1
-          class="text-5xl lg:text-6xl xl:text-7xl font-extrabold text-amber-400 mb-6 leading-none tracking-tight"
+          class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-amber-400 mb-4 lg:mb-6 leading-none tracking-tight"
         >
           AD ASTRA
         </h1>
         <div
-          class="text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 leading-none tracking-tight whitespace-nowrap"
+          class="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-4 lg:mb-6 leading-tight tracking-tight"
         >
           {{ t.subtitle }}
         </div>
-        <div class="text-xl lg:text-3xl font-light text-white mb-8 leading-relaxed">
+        <div class="text-lg sm:text-xl lg:text-3xl font-light text-white mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
           {{ t.description }}
         </div>
         <div
-          class="text-6xl lg:text-7xl xl:text-8xl font-extrabold text-amber-400 mb-8 leading-none tracking-tight drop-shadow-lg"
+          class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-amber-400 mb-6 lg:mb-8 leading-none tracking-tight drop-shadow-lg"
         >
           09.05
         </div>
@@ -36,7 +36,7 @@ const { showHint } = useScrollHint()
           :href="t.registrationUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center bg-gradient-to-r from-amber-400 to-amber-500 text-black px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-amber-400/25 hover:from-amber-300 hover:to-amber-400 transform hover:scale-105 transition-all duration-300 group"
+          class="inline-flex items-center justify-center bg-gradient-to-r from-amber-400 to-amber-500 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-amber-400/25 hover:from-amber-300 hover:to-amber-400 transform hover:scale-105 transition-all duration-300 group"
         >
           {{ t.registrationTitle }}
           <svg
@@ -54,11 +54,11 @@ const { showHint } = useScrollHint()
           </svg>
         </a>
       </div>
-      <div class="flex-1 flex justify-center items-center max-w-lg">
+      <div class="flex-1 flex justify-center items-center max-w-sm lg:max-w-lg order-first lg:order-last">
         <img
           :src="logoUrl"
           alt="Ad Astra Logo"
-          class="w-full max-w-md h-auto drop-shadow-xl object-contain"
+          class="w-full max-w-xs sm:max-w-sm lg:max-w-md h-auto drop-shadow-xl object-contain"
         />
       </div>
     </div>

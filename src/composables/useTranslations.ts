@@ -46,17 +46,16 @@ const translations = {
     concertPart: 'Koncertinė dalis',
     concertPartDesc:
       'Muzikiniai pasirodymai, kurie sukurs šventišką atmosferą ir suburs bendruomenę bendram kultūriniam patyrimui.',
-    newsTitle: 'Sekite naujienas ir atnaujinimus',
+    newsTitle: 'Sekite naujienas apie renginį',
     newsDescription:
-      'Būkite informuoti apie paskutines žinias, programos pakeitimus ir svarbius pranešimus apie Ad Astra festivalį.',
+      'Sekite naujausią informaciją apie renginį, programą ir svarbius pranešimus apie Ad Astra festivalį.',
     facebookEvent: 'Facebook renginys',
     facebookEventDesc:
-      'Prisijunkite prie oficialaus Facebook renginio puslapio, kur rasite naujausią informaciją, galėsite bendrauti su kitais dalyviais ir gauti svarbius pranešimus.',
+      'Apsilankykite Ad Astra renginio Facebook puslapyje, kuriame rasite naujausią informaciją',
     viewEvent: 'Peržiūrėti renginį',
     vusaWebsite: 'VU SA svetainė',
-    vusaWebsiteDesc:
-      'Aplankykite oficialų Ad Astra puslapį VU SA svetainėje, kur rasite detalų programos aprašą, dalyvių informaciją ir oficialius dokumentus.',
-    readMore: 'Skaityti daugiau',
+    vusaWebsiteDesc: 'VU SA svetainėje, sekite Ad Astra ir kitus VU SA organizuojamus renginius',
+    readMore: 'Daugiau renginių',
     partnersTitle: 'Partneriai',
     partnersDescription:
       'Ad Astra festivalis vyksta tik dėka nuolatinio partnerių palaikymo ir bendradarbiavimo. Dėkojame visiems, kurie prisideda prie šios iniciatyvos sėkmės.',
@@ -67,7 +66,7 @@ const translations = {
     facultiesPartner: '15 VU fakultetų',
     facultiesPartnerDesc: 'Aktyvūs dalyviai ir programos formuotojai',
     partnershipText: 'Norite tapti partneru? Susisiekite su mumis ir kartu kurkime puikų renginį!',
-    contactEmail: 'kontaktai@adastra.vu.lt',
+    contactEmail: 'adastra@vusa.lt',
     organizatoriaiTitle: 'Organizatoriai',
     // Navigation
     navHome: 'Pradžia',
@@ -132,7 +131,7 @@ const translations = {
     vusaWebsite: 'VU SA Website',
     vusaWebsiteDesc:
       'Visit the official Ad Astra page on the VU SA website where you can find detailed program descriptions, participant information and official documents.',
-    readMore: 'Read More',
+    readMore: 'More events',
     partnersTitle: 'Partners',
     partnersDescription:
       'The Ad Astra festival takes place only thanks to the constant support and cooperation of partners. We thank everyone who contributes to the success of this initiative.',
@@ -144,7 +143,7 @@ const translations = {
     facultiesPartnerDesc: 'Active participants and program developers',
     partnershipText:
       "Want to become a partner? Contact us and let's create a great event together!",
-    contactEmail: 'contact@adastra.vu.lt',
+    contactEmail: 'adastra@vusa.lt',
     organizatoriaiTitle: 'Organizers',
     // Navigation
     navHome: 'Home',

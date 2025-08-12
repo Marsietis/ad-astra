@@ -14,7 +14,7 @@ const navigationItems = computed(() => [
   { id: 'why-ad-astra', label: t.value.navWhy, href: '#why-ad-astra' },
   { id: 'program', label: t.value.navProgram, href: '#program' },
   { id: 'news', label: t.value.navNews, href: '#news' },
-  { id: 'organizers', label: t.value.navOrganizers, href: '#organizatoriai' },
+  { id: 'organizatoriai', label: t.value.navOrganizers, href: '#organizatoriai' },
   { id: 'partners', label: t.value.navPartners, href: '#partners' },
 ])
 
@@ -68,7 +68,7 @@ onUnmounted(() => {
 
 <template>
   <nav
-    class="fixed left-4 top-1/2 -translate-y-1/2 z-50 transition-all duration-500"
+    class="fixed left-4 top-1/2 -translate-y-1/2 z-50 transition-all duration-500 hidden lg:block"
     :class="[isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full']"
   >
     <!-- Navigation Links -->

@@ -32,6 +32,14 @@ const { currentLanguage, toggleLanguage } = useTranslations()
   z-index: 1000;
 }
 
+@media (max-width: 1024px) {
+  .language-toggle-container {
+    top: 1rem;
+    right: 1rem;
+    z-index: 10000;
+  }
+}
+
 .language-toggle {
   display: flex;
   align-items: center;

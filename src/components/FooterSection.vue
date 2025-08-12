@@ -14,7 +14,7 @@ const { t } = useTranslations()
         </div>
         <div class="social-links">
           <a
-            href="https://www.facebook.com/VilniausUniversitetoStudentuAtstovybe"
+            href="https://www.facebook.com/vieningai.vu.sa"
             target="_blank"
             rel="noopener noreferrer"
             class="social-link"
@@ -26,7 +26,7 @@ const { t } = useTranslations()
             </svg>
           </a>
           <a
-            href="https://www.instagram.com/vu_sa/"
+            href="https://www.instagram.com/vu.studentu.atstovybe"
             target="_blank"
             rel="noopener noreferrer"
             class="social-link"
@@ -45,7 +45,7 @@ const { t } = useTranslations()
             </svg>
           </a>
           <a
-            href="https://www.vu.lt/studentu-atstovybe"
+            href="https://www.vusa.lt"
             target="_blank"
             rel="noopener noreferrer"
             class="social-link"

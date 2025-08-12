@@ -15,16 +15,16 @@ const { sectionRef, isVisible } = useScrollAnimation()
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="text-center">
-        <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-12 lg:mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-8 sm:mb-12 lg:mb-16">
           {{ t.eventInfoTitle }}
         </h2>
 
         <!-- Event Details -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-6 max-w-full mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 lg:gap-6 max-w-5xl mx-auto">
           <!-- Date -->
           <div class="text-center">
             <svg
-              class="w-8 h-8 lg:w-10 lg:h-10 text-amber-400 mx-auto mb-6"
+              class="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-amber-400 mx-auto mb-4 sm:mb-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -37,11 +37,11 @@ const { sectionRef, isVisible } = useScrollAnimation()
               />
             </svg>
             <div
-              class="text-base lg:text-lg font-medium text-amber-400 uppercase tracking-wider mb-4"
+              class="text-sm sm:text-base lg:text-lg font-medium text-amber-400 uppercase tracking-wider mb-3 sm:mb-4"
             >
               {{ t.dateLabel }}
             </div>
-            <div class="text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
+            <div class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
               {{ t.eventDate }}
             </div>
           </div>
@@ -49,7 +49,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
           <!-- Time -->
           <div class="text-center">
             <svg
-              class="w-8 h-8 lg:w-10 lg:h-10 text-amber-400 mx-auto mb-6"
+              class="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-amber-400 mx-auto mb-4 sm:mb-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -62,11 +62,11 @@ const { sectionRef, isVisible } = useScrollAnimation()
               />
             </svg>
             <div
-              class="text-base lg:text-lg font-medium text-amber-400 uppercase tracking-wider mb-4"
+              class="text-sm sm:text-base lg:text-lg font-medium text-amber-400 uppercase tracking-wider mb-3 sm:mb-4"
             >
               {{ t.timeLabel }}
             </div>
-            <div class="text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
+            <div class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
               {{ t.eventTime }}
             </div>
           </div>
@@ -74,7 +74,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
           <!-- Location -->
           <div class="text-center flex flex-col items-center">
             <svg
-              class="w-8 h-8 lg:w-10 lg:h-10 text-amber-400 mx-auto mb-6"
+              class="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-amber-400 mx-auto mb-4 sm:mb-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -93,21 +93,21 @@ const { sectionRef, isVisible } = useScrollAnimation()
               />
             </svg>
             <div
-              class="text-base lg:text-lg font-medium text-amber-400 uppercase tracking-wider mb-4"
+              class="text-sm sm:text-base lg:text-lg font-medium text-amber-400 uppercase tracking-wider mb-3 sm:mb-4"
             >
               {{ t.locationLabel }}
             </div>
-            <div class="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-3 text-center">
+            <div class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2 sm:mb-3 text-center">
               {{ t.eventLocation }}
             </div>
-            <div class="text-lg lg:text-xl text-gray-300">
+            <div class="text-base sm:text-lg lg:text-xl text-gray-300 px-2">
               {{ t.eventAddress }}
             </div>
           </div>
         </div>
 
         <!-- More info message -->
-        <div class="text-base lg:text-lg text-gray-400 text-center mt-8 lg:mt-12 italic font-light">
+        <div class="text-sm sm:text-base lg:text-lg text-gray-400 text-center mt-6 sm:mt-8 lg:mt-12 italic font-light px-4">
           {{ t.moreInfoSoon }}
         </div>
       </div>

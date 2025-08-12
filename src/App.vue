@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Navigation from '@/components/Navigation.vue'
+import MobileNavigation from '@/components/MobileNavigation.vue'
 import LanguageToggle from '@/components/LanguageToggle.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
@@ -19,6 +20,7 @@ useBackgroundAnimations()
 <template>
   <div id="app">
     <Navigation />
+    <MobileNavigation />
     <LanguageToggle />
     <HeroSection />
     <EventInfoSection />
@@ -411,11 +413,18 @@ body {
 .accent-1 {
   top: 120vh;
   right: 8vw;
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, transparent 70%);
   border-radius: 50%;
   animation: pulse-glow 8s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .accent-1 {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 @keyframes pulse-glow {
@@ -428,6 +437,40 @@ body {
     opacity: 0.2;
     transform: scale(1.1);
   }
+}
+
+/* Star size adjustments for mobile */
+@media (max-width: 768px) {
+  .star-svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .star-5point {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .star-xl,
+  .star-xxl,
+  .star-lg-plus {
+    width: 3px;
+    height: 3px;
+    filter: blur(1px);
+  }
+  
+  .shooting-star::before,
+  .shooting-star::after {
+    animation: tail-mobile 3s linear forwards;
+  }
+}
+
+@keyframes tail-mobile {
+  0% { width: 0; }
+  10% { width: 0; }
+  50% { width: 20px; }
+  90% { width: 20px; }
+  100% { width: 0; }
 }
 
 /* Responsive adjustments */
@@ -444,7 +487,7 @@ body {
   }
 
   .floating-accent {
-    display: none;
+    opacity: 0.05;
   }
 }
 

@@ -7,7 +7,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
 </script>
 
 <template>
-  <section ref="sectionRef" class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out" :class="{ 'opacity-100 translate-y-0': isVisible }">
+  <section id="organizatoriai" ref="sectionRef" class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out" :class="{ 'opacity-100 translate-y-0': isVisible }">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <h2 class="text-4xl lg:text-5xl font-bold text-white mb-8 text-center">{{ t.organizatoriaiTitle }}</h2>
 

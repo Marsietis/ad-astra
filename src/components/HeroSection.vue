@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import logoUrl from '/src/assets/logo.png'
 import { useTranslations } from '@/composables/useTranslations'
+import { useScrollHint } from '@/composables/useScrollHint'
 
 const { t } = useTranslations()
+const { showHint } = useScrollHint()
 </script>
 
 <template>
@@ -60,7 +62,10 @@ const { t } = useTranslations()
         />
       </div>
     </div>
-    <div class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2">
+    <div 
+      class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-opacity duration-300"
+      :class="{ 'opacity-0 pointer-events-none': showHint }"
+    >
       <span class="text-2xl text-white/50">↓</span>
     </div>
   </main>

@@ -77,6 +77,8 @@ const translations = {
     navProgram: 'Programa',
     navNews: 'Naujienos',
     navPartners: 'Partneriai',
+    // Scroll hint
+    scrollDown: 'Slinkti žemyn',
   },
   en: {
     subtitle: 'IN VILNIUS UNIVERSITY',
@@ -151,6 +153,8 @@ const translations = {
     navProgram: 'Program',
     navNews: 'News',
     navPartners: 'Partners',
+    // Scroll hint
+    scrollDown: 'Scroll down',
   },
 }
 

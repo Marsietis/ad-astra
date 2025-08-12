@@ -10,6 +10,7 @@ import NewsSection from '@/components/NewsSection.vue'
 import PartnersSection from '@/components/PartnersSection.vue'
 import OrganizatoriaiSection from '@/components/OrganizatoriaiSection.vue'
 import FooterSection from '@/components/FooterSection.vue'
+import ScrollHint from '@/components/ScrollHint.vue'
 import { useBackgroundAnimations } from '@/composables/useScrollAnimation'
 
 useBackgroundAnimations()
@@ -34,6 +35,9 @@ useBackgroundAnimations()
     <PartnersSection />
 
     <FooterSection />
+    
+    <!-- Scroll hint arrow -->
+    <ScrollHint />
   </div>
 </template>
 

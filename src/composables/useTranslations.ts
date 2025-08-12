@@ -76,6 +76,7 @@ const translations = {
     navWhy: 'Kodėl',
     navProgram: 'Programa',
     navNews: 'Naujienos',
+    navOrganizers: 'Organizatoriai',
     navPartners: 'Partneriai',
     // Scroll hint
     scrollDown: 'Slinkti žemyn',
@@ -152,6 +153,7 @@ const translations = {
     navWhy: 'Why',
     navProgram: 'Program',
     navNews: 'News',
+    navOrganizers: 'Organizers',
     navPartners: 'Partners',
     // Scroll hint
     scrollDown: 'Scroll down',

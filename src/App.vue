@@ -21,13 +21,13 @@ useBackgroundAnimations()
     <Navigation />
     <LanguageToggle />
     <HeroSection />
+    <EventInfoSection />
 
     <AboutSection />
 
     <!-- Floating decorative elements -->
     <div class="floating-accent accent-1"></div>
 
-    <EventInfoSection />
     <WhyAdAstraSection />
     <ProgramSection />
     <NewsSection />
@@ -35,7 +35,7 @@ useBackgroundAnimations()
     <PartnersSection />
 
     <FooterSection />
-    
+
     <!-- Scroll hint arrow -->
     <ScrollHint />
   </div>

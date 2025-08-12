@@ -53,7 +53,6 @@ export function useScrollAnimation() {
 export function useBackgroundAnimations() {
   onMounted(() => {
     createStars()
-    createShapes()
     createShootingStars()
   })
 
@@ -194,29 +193,4 @@ export function useBackgroundAnimations() {
     shootingStarIntervalId = setTimeout(shootingStarInterval, Math.random() * 5000)
   }
 
-  function createShapes() {
-    // Remove existing shapes container if it exists
-    const existingContainer = document.querySelector('.background-shapes')
-    if (existingContainer) {
-      existingContainer.remove()
-    }
-
-    const shapesContainer = document.createElement('div')
-    shapesContainer.classList.add('background-shapes')
-    document.body.appendChild(shapesContainer)
-
-    const shapes = ['circle']
-
-    for (let i = 0; i < 8; i++) {
-      const shape = document.createElement('div')
-      const randomShape = shapes[Math.floor(Math.random() * shapes.length)]
-
-      shape.classList.add('shape', randomShape)
-      shape.style.left = Math.random() * 100 + '%'
-      shape.style.top = Math.random() * 100 + '%'
-      shape.style.animationDelay = Math.random() * 10 + 's'
-
-      shapesContainer.appendChild(shape)
-    }
-  }
 }

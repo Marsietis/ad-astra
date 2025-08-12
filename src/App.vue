@@ -313,57 +313,6 @@ body {
   }
 }
 
-.background-shapes {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  pointer-events: none;
-}
-
-.shape {
-  position: absolute;
-  opacity: 0.05;
-  animation: subtle-float 30s ease-in-out infinite;
-}
-
-.shape.circle {
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0.1) 70%,
-    transparent 100%
-  );
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-}
-
-.shape:nth-child(2n) {
-  animation-duration: 25s;
-  animation-direction: reverse;
-}
-
-.shape:nth-child(3n) {
-  animation-duration: 30s;
-}
-
-.shape:nth-child(4n) {
-  animation-duration: 18s;
-  animation-direction: reverse;
-}
-
-@keyframes subtle-float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
 
 #app {
   position: relative;

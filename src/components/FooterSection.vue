@@ -64,8 +64,8 @@ const { t } = useTranslations()
 
 <style scoped>
 .footer {
-  padding: var(--space-xl) 0;
-  margin-top: var(--space-xl);
+  padding: 2rem 0;
+  margin-top: 2rem;
 }
 
 .footer-separator {
@@ -79,13 +79,13 @@ const { t } = useTranslations()
     rgba(255, 255, 255, 0.1) 80%,
     transparent 100%
   );
-  margin-bottom: var(--space-xl);
+  margin-bottom: 3rem;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-xl);
+  padding: 0 2rem;
 }
 
 .footer-content {
@@ -93,19 +93,22 @@ const { t } = useTranslations()
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--space-md);
+  gap: 2rem;
+  padding: 0.75rem 0;
 }
 
 .copyright p {
   color: var(--color-text-muted);
   font-size: var(--text-sm);
   margin: 0;
+  padding: 0.5rem 1rem;
 }
 
 .social-links {
   display: flex;
-  gap: var(--space-md);
+  gap: 1.5rem;
   align-items: center;
+  padding: 0.5rem 1rem;
 }
 
 .social-link {

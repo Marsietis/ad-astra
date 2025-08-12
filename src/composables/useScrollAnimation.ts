@@ -67,8 +67,14 @@ export function useBackgroundAnimations() {
     starsContainer.classList.add('stars')
     document.body.appendChild(starsContainer)
 
+    // Determine star count based on device capabilities
+    const isMobile = window.innerWidth <= 768
+    const starCount = isMobile ? 600 : 1000
+    const svgStarCount = isMobile ? 15 : 30
+    const fivePointStarCount = isMobile ? 25 : 50
+
     // Create regular dot stars with weighted size distribution
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < starCount; i++) {
       const star = document.createElement('div')
 
       // Weighted size distribution (realistic star field with more tiny stars)
@@ -96,7 +102,7 @@ export function useBackgroundAnimations() {
     }
 
     // Create SVG stars using the star.svg file
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < svgStarCount; i++) {
       const svgStar = document.createElement('div')
       svgStar.classList.add('star', 'star-svg')
 
@@ -108,7 +114,7 @@ export function useBackgroundAnimations() {
     }
 
     // Create 5-point CSS stars
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < fivePointStarCount; i++) {
       const fivePointStar = document.createElement('div')
       fivePointStar.classList.add('star', 'star-5point')
 
@@ -186,11 +192,15 @@ export function useBackgroundAnimations() {
     // Create shooting stars at regular intervals
     const shootingStarInterval = () => {
       createShootingStar()
-      shootingStarIntervalId = setTimeout(shootingStarInterval, 5000 + Math.random() * 10000) // Every 2-5 seconds
+      const isMobile = window.innerWidth <= 768
+      const interval = isMobile ? 10000 + Math.random() * 15000 : 5000 + Math.random() * 10000
+      shootingStarIntervalId = setTimeout(shootingStarInterval, interval)
     }
 
     // Start the first shooting star after a random delay
-    shootingStarIntervalId = setTimeout(shootingStarInterval, Math.random() * 5000)
+    const isMobile = window.innerWidth <= 768
+    const initialDelay = isMobile ? Math.random() * 8000 : Math.random() * 5000
+    shootingStarIntervalId = setTimeout(shootingStarInterval, initialDelay)
   }
 
 }

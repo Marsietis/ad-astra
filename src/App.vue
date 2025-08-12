@@ -48,7 +48,6 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(160deg, #030408 0%, #030408 60%, #080c32 100%);
-  min-height: 100vh;
   position: relative;
   overflow-x: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -65,6 +64,7 @@ body {
   pointer-events: none;
   animation: stellar-rotation 240s linear infinite;
   transform-origin: 50% 50%;
+  will-change: transform;
 }
 
 .star {
@@ -317,7 +317,6 @@ body {
 #app {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -390,6 +389,10 @@ body {
 
 /* Star size adjustments for mobile */
 @media (max-width: 768px) {
+  .stars {
+    animation: stellar-rotation 300s linear infinite;
+  }
+  
   .star-svg {
     width: 16px;
     height: 16px;

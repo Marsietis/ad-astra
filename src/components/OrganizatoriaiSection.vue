@@ -7,16 +7,16 @@ const { sectionRef, isVisible } = useScrollAnimation()
 </script>
 
 <template>
-  <section ref="sectionRef" class="content-section" :class="{ visible: isVisible }">
-    <div class="content-container">
-      <h2 class="text-white text-7xl font-bold font-sans mb-8 text-left">{{ t.organizatoriaiTitle }}</h2>
+  <section ref="sectionRef" class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out" :class="{ 'opacity-100 translate-y-0': isVisible }">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-8 text-center">{{ t.organizatoriaiTitle }}</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-items-center">
-        <div class="flex justify-center h-38 items-center">
-          <img src="/vusa.png" alt="VU SA logo" class="max-w-full h-full object-contain" />
+      <div class="flex items-center justify-center gap-16 mt-12">
+        <div class="flex justify-center items-center h-40">
+          <img src="/vusa.png" alt="VU SA logo" class="max-w-full max-h-full object-contain brightness-110 transition-all duration-300 hover:scale-105 hover:brightness-125" />
         </div>
-        <div class="flex justify-center h-38 items-center">
-          <img src="/vu.png" alt="VU logo" class="max-w-full h-full object-contain" />
+        <div class="flex justify-center items-center h-40">
+          <img src="/vu.png" alt="VU logo" class="max-w-full max-h-full object-contain brightness-110 transition-all duration-300 hover:scale-105 hover:brightness-125" />
         </div>
       </div>
     </div>
@@ -24,36 +24,9 @@ const { sectionRef, isVisible } = useScrollAnimation()
 </template>
 
 <style scoped>
-.content-section {
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
-}
-
-.content-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.content-container {
-  max-width: 800px;
-  text-align: center;
-}
-
 @media (max-width: 768px) {
-  .content-section {
-    padding: 2rem 1rem;
-  }
-
-  .content-container h2 {
-    font-size: 2rem;
+  .flex {
+    @apply flex-col gap-12;
   }
 }
 </style>

@@ -7,45 +7,14 @@ const { sectionRef, isVisible } = useScrollAnimation()
 </script>
 
 <template>
-  <section ref="sectionRef" class="content-section" :class="{ visible: isVisible }">
-    <div class="content-container">
-      <h2 class="text-white text-7xl font-bold font-sans mb-8 text-left">{{ t.partnersTitle }}</h2>
-      <img src="@/assets/partneriai.png" alt="Partners" class="w-full h-auto" />
+  <section ref="sectionRef" class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out" :class="{ 'opacity-100 translate-y-0': isVisible }">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-8 text-center">{{ t.partnersTitle }}</h2>
+      <img src="@/assets/partneriai.png" alt="Partners" class="w-full h-auto max-w-full object-contain" />
     </div>
   </section>
 </template>
 
 <style scoped>
-.content-section {
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
-}
-
-.content-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.content-container {
-  max-width: 800px;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .content-section {
-    padding: 2rem 1rem;
-  }
-
-  .content-container h2 {
-    font-size: 2rem;
-  }
-}
+/* No additional styles needed - using Tailwind */
 </style>

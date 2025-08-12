@@ -6,70 +6,67 @@ const { t } = useTranslations()
 </script>
 
 <template>
-  <main class="hero-section">
-    <div class="hero-content">
+  <main class="min-h-screen flex items-center px-4 lg:px-8 relative">
+    <div
+      class="flex items-center justify-between w-full max-w-8xl mx-32 gap-16 flex-col lg:flex-row text-center lg:text-left"
+    >
       <div class="flex-1 max-w-3xl">
-        <h1 class="text-yellow-500 text-7xl font-bold font-extrabold mb-16">AD ASTRA</h1>
-        <div class="text-white text-6xl font-bold font-sans mb-2">{{ t.subtitle }}</div>
-        <div class="text-white text-4xl font-light font-sans mb-2 mt-8">
+        <h1
+          class="text-5xl lg:text-6xl xl:text-7xl font-extrabold text-amber-400 mb-6 leading-none tracking-tight"
+        >
+          AD ASTRA
+        </h1>
+        <div
+          class="text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 leading-none tracking-tight whitespace-nowrap"
+        >
+          {{ t.subtitle }}
+        </div>
+        <div class="text-xl lg:text-3xl font-light text-white mb-8 leading-relaxed">
           {{ t.description }}
         </div>
-        <div class="text-yellow-500 text-8xl font-extrabold font-sans mt-8">09.05</div>
-        
-        <a 
-          :href="t.registrationUrl" 
-          target="_blank" 
+        <div
+          class="text-6xl lg:text-7xl xl:text-8xl font-extrabold text-amber-400 mb-8 leading-none tracking-tight drop-shadow-lg"
+        >
+          09.05
+        </div>
+
+        <a
+          :href="t.registrationUrl"
+          target="_blank"
           rel="noopener noreferrer"
-          class="inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-xl py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg mt-8"
+          class="inline-flex items-center justify-center bg-gradient-to-r from-amber-400 to-amber-500 text-black px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-amber-400/25 hover:from-amber-300 hover:to-amber-400 transform hover:scale-105 transition-all duration-300 group"
         >
           {{ t.registrationTitle }}
+          <svg
+            class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            ></path>
+          </svg>
         </a>
       </div>
-      <div class="flex-1 flex justify-center items-center max-w-lg min-h-96">
+      <div class="flex-1 flex justify-center items-center max-w-lg">
         <img
           :src="logoUrl"
           alt="Ad Astra Logo"
-          class="w-full max-w-md h-auto drop-shadow-lg object-contain"
+          class="w-full max-w-md h-auto drop-shadow-xl object-contain"
         />
       </div>
     </div>
-    <div class="scroll-indicator"></div>
+    <div class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <span class="text-2xl text-white/50">↓</span>
+    </div>
   </main>
 </template>
 
 <style scoped>
-.hero-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 0 2rem;
-  position: relative;
-}
-
-.hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 4rem;
-}
-
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: bounce 2s infinite;
-}
-
-.scroll-indicator::before {
-  content: '↓';
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
 @keyframes bounce {
   0%,
   20%,
@@ -86,42 +83,13 @@ const { t } = useTranslations()
   }
 }
 
-@media (min-width: 1200px) {
-  .hero-content {
-    max-width: 1400px;
-    gap: 6rem;
-  }
-
-  .hero-text {
-    max-width: 700px;
-  }
-
-  .hero-text h1 {
-    font-size: 4rem;
-  }
-
-  .hero-logo {
-    max-width: 600px;
-  }
-
-  .hero-logo img {
-    max-width: 500px;
-  }
+.scroll-indicator {
+  animation: bounce 2s infinite;
 }
 
 @media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-section {
-    padding: 2rem 1rem;
+  .whitespace-nowrap {
+    white-space: normal;
   }
 }
 </style>

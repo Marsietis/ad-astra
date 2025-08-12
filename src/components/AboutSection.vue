@@ -9,27 +9,27 @@ const { sectionRef, isVisible } = useScrollAnimation()
 <template>
   <section
     ref="sectionRef"
-    class="content-section"
-    :class="{ visible: isVisible }"
+    class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out"
+    :class="{ 'opacity-100 translate-y-0': isVisible }"
   >
-    <div class="content-container">
-      <div class="content-grid">
-        <div class="content-text">
-          <h2 class="text-white text-7xl font-bold font-sans mb-8 text-left">
+    <div class="max-w-screen-2xl mx-auto px-2 sm:px-4 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[60vh]">
+        <div class="relative z-10">
+          <h2 class="text-4xl lg:text-5xl font-bold text-white mb-8 ml-24 text-left">
             {{ t.whatIsAdAstra }}
           </h2>
-          <div class="text-white text-xl font-light font-sans mb-4 text-left">
+          <div class="text-lg lg:text-xl font-light text-white mb-6 ml-24 text-left">
             {{ t.aboutText1 }}
           </div>
-          <div class="text-white text-xl font-light font-sans mb-4 text-left">
+          <div class="text-lg lg:text-xl font-light text-white mb-6 ml-24 text-left">
             {{ t.aboutText2 }}
           </div>
-          <div class="text-white text-xl font-light font-sans mb-4 text-left">
+          <div class="text-lg lg:text-xl font-light text-white mb-6 ml-24 text-left">
             {{ t.aboutText3 }}
           </div>
         </div>
-        <div class="content-accent">
-          <div class="accent-shape accent-shape-1"></div>
+        <div class="relative h-96 lg:h-[400px] flex items-center justify-center">
+          <div class="absolute w-48 h-48 lg:w-52 lg:h-52 bg-gradient-radial from-amber-400/30 via-amber-400/10 to-transparent rounded-full top-1/5 right-1/10 opacity-15 animate-pulse"></div>
         </div>
       </div>
     </div>
@@ -37,67 +37,6 @@ const { sectionRef, isVisible } = useScrollAnimation()
 </template>
 
 <style scoped>
-.content-section {
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
-}
-
-.content-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.content-container {
-  max-width: 1200px;
-  width: 100%;
-  text-align: left;
-}
-
-.content-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  min-height: 60vh;
-}
-
-.content-text {
-  position: relative;
-  z-index: 2;
-}
-
-.content-accent {
-  position: relative;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.accent-shape {
-  position: absolute;
-  opacity: 0.15;
-}
-
-.accent-shape-1 {
-  width: 180px;
-  height: 180px;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, transparent 70%);
-  border-radius: 50%;
-  top: 20%;
-  right: 10%;
-  animation: pulse-accent 6s ease-in-out infinite;
-}
-
-
 @keyframes pulse-accent {
   0%, 100% {
     transform: scale(1);
@@ -109,39 +48,14 @@ const { sectionRef, isVisible } = useScrollAnimation()
   }
 }
 
+.animate-pulse {
+  animation: pulse-accent 6s ease-in-out infinite;
+}
 
 @media (max-width: 768px) {
-  .content-section {
-    padding: 2rem 1rem;
-  }
-
-  .content-container h2 {
-    font-size: 2rem;
-  }
-  
-  .content-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-  
-  .content-accent {
-    height: 200px;
-    order: -1;
-  }
-  
-  .accent-shape-1 {
-    width: 120px;
-    height: 120px;
-    top: 10%;
-    right: 20%;
-  }
-  
-  .accent-shape-2 {
-    width: 80px;
-    height: 80px;
-    bottom: 20%;
-    left: 25%;
+  .ml-24 {
+    margin-left: 0 !important;
+    text-align: center !important;
   }
 }
 </style>

@@ -19,36 +19,17 @@ useBackgroundAnimations()
     <LanguageToggle />
     <HeroSection />
 
-    <div class="layout-container layout-offset-right">
-      <AboutSection />
-    </div>
-
+    <AboutSection />
+    
     <!-- Floating decorative elements -->
     <div class="floating-accent accent-1"></div>
-
-    <div class="layout-container layout-offset-left">
-      <EventInfoSection />
-    </div>
-
-    <div class="layout-container layout-offset-right">
-      <WhyAdAstraSection />
-    </div>
-
-    <div class="layout-container layout-offset-left">
-      <ProgramSection />
-    </div>
-
-    <div class="layout-container layout-center-wide">
-      <NewsSection />
-    </div>
-
-    <div class="layout-container layout-offset-right">
-      <OrganizatoriaiSection />
-    </div>
-
-    <div class="layout-container layout-full-bleed">
-      <PartnersSection />
-    </div>
+    
+    <EventInfoSection />
+    <WhyAdAstraSection />
+    <ProgramSection />
+    <NewsSection />
+    <OrganizatoriaiSection />
+    <PartnersSection />
 
     <FooterSection />
   </div>
@@ -351,7 +332,7 @@ body {
   right: 8vw;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, transparent 70%);
   border-radius: 50%;
   animation: pulse-glow 8s ease-in-out infinite;
 }

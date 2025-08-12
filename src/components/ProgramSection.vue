@@ -7,45 +7,45 @@ const { sectionRef, isVisible } = useScrollAnimation()
 </script>
 
 <template>
-  <section ref="sectionRef" class="content-section" :class="{ visible: isVisible }">
-    <div class="content-container">
-      <h2 class="text-white text-7xl font-bold font-sans mb-8 text-left">{{ t.programTitle }}</h2>
-      <div class="text-white text-xl font-light font-sans mb-6 text-left">
+  <section ref="sectionRef" class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out" :class="{ 'opacity-100 translate-y-0': isVisible }">
+    <div class="max-w-screen-2xl mx-auto px-2 sm:px-4 w-full">
+      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-8 ml-24 text-left">{{ t.programTitle }}</h2>
+      <div class="text-lg lg:text-xl font-light text-white mb-6 ml-24 text-left">
         {{ t.programDescription }}
       </div>
 
-      <div class="program-cards">
-        <div class="program-card card-1">
-          <div class="card-content bg-gray-800/30 p-6 rounded-lg backdrop-blur-sm">
-            <h3 class="text-yellow-500 text-2xl font-bold mb-4">{{ t.scientificZone }}</h3>
-            <p class="text-white text-lg font-light">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mt-12 relative">
+        <div class="transform transition-all duration-300 hover:-translate-y-2">
+          <div class="bg-gray-800/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-gray-800/50 hover:border-amber-400/30">
+            <h3 class="text-2xl font-semibold text-amber-400 mb-4">{{ t.scientificZone }}</h3>
+            <p class="text-lg text-gray-200">
               {{ t.scientificZoneDesc }}
             </p>
           </div>
         </div>
 
-        <div class="program-card card-2">
-          <div class="card-content bg-gray-800/30 p-6 rounded-lg backdrop-blur-sm">
-            <h3 class="text-yellow-500 text-2xl font-bold mb-4">{{ t.contactFair }}</h3>
-            <p class="text-white text-lg font-light">
+        <div class="transform translate-y-8 transition-all duration-300 hover:translate-y-6">
+          <div class="bg-gray-800/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-gray-800/50 hover:border-amber-400/30">
+            <h3 class="text-2xl font-semibold text-amber-400 mb-4">{{ t.contactFair }}</h3>
+            <p class="text-lg text-gray-200">
               {{ t.contactFairDesc }}
             </p>
           </div>
         </div>
 
-        <div class="program-card card-3">
-          <div class="card-content bg-gray-800/30 p-6 rounded-lg backdrop-blur-sm">
-            <h3 class="text-yellow-500 text-2xl font-bold mb-4">{{ t.discussionZone }}</h3>
-            <p class="text-white text-lg font-light">
+        <div class="transform translate-y-4 transition-all duration-300 hover:translate-y-2">
+          <div class="bg-gray-800/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-gray-800/50 hover:border-amber-400/30">
+            <h3 class="text-2xl font-semibold text-amber-400 mb-4">{{ t.discussionZone }}</h3>
+            <p class="text-lg text-gray-200">
               {{ t.discussionZoneDesc }}
             </p>
           </div>
         </div>
 
-        <div class="program-card card-4">
-          <div class="card-content bg-gray-800/30 p-6 rounded-lg backdrop-blur-sm">
-            <h3 class="text-yellow-500 text-2xl font-bold mb-4">{{ t.concertPart }}</h3>
-            <p class="text-white text-lg font-light">
+        <div class="transform translate-y-12 transition-all duration-300 hover:translate-y-10">
+          <div class="bg-gray-800/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-gray-800/50 hover:border-amber-400/30">
+            <h3 class="text-2xl font-semibold text-amber-400 mb-4">{{ t.concertPart }}</h3>
+            <p class="text-lg text-gray-200">
               {{ t.concertPartDesc }}
             </p>
           </div>
@@ -56,119 +56,18 @@ const { sectionRef, isVisible } = useScrollAnimation()
 </template>
 
 <style scoped>
-.content-section {
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
-}
-
-.content-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.content-container {
-  max-width: 1100px;
-  text-align: left;
-}
-
-.program-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-  position: relative;
-}
-
-.program-card {
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.program-card:hover {
-  transform: translateY(-10px);
-}
-
-.card-1 {
-  transform: translateY(0px);
-}
-
-.card-2 {
-  transform: translateY(40px);
-}
-
-.card-3 {
-  transform: translateY(20px);
-}
-
-.card-4 {
-  transform: translateY(60px);
-}
-
-.card-content {
-  position: relative;
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.card-content:hover {
-  border-color: rgba(255, 215, 0, 0.4);
-  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.1);
-}
-
-.card-content::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), transparent, rgba(255, 215, 0, 0.1));
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.card-content:hover::before {
-  opacity: 1;
-}
-
 @media (max-width: 768px) {
-  .content-section {
-    padding: 2rem 1rem;
+  .ml-24 {
+    margin-left: 0 !important;
+    text-align: center !important;
   }
 
-  .content-container h2 {
-    font-size: 2rem;
-    text-align: center;
-  }
-  
-  .content-container {
-    text-align: center;
+  .grid > div {
+    transform: translateY(0) !important;
   }
 
-  .program-cards {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .card-1,
-  .card-2,
-  .card-3,
-  .card-4 {
-    transform: translateY(0px);
-  }
-
-  .program-card:hover {
-    transform: translateY(-5px);
+  .grid > div:hover {
+    transform: translateY(-0.5rem) !important;
   }
 }
 </style>

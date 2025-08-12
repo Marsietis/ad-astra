@@ -157,11 +157,10 @@ export function useBackgroundAnimations() {
       }, 3000)
     }
 
-    // Create shooting stars at random intervals
+    // Create shooting stars at regular intervals for testing
     const shootingStarInterval = () => {
       createShootingStar()
-      const nextInterval = 8000 + Math.random() * 12000 // 8-20 seconds
-      setTimeout(shootingStarInterval, nextInterval)
+      setTimeout(shootingStarInterval, 1000) // Every 5 seconds
     }
 
     // Start the first shooting star after a random delay

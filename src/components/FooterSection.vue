@@ -64,8 +64,8 @@ const { t } = useTranslations()
 
 <style scoped>
 .footer {
-  padding: 2rem 0;
-  margin-top: 2rem;
+  padding: var(--space-xl) 0;
+  margin-top: var(--space-xl);
 }
 
 .footer-separator {
@@ -79,13 +79,13 @@ const { t } = useTranslations()
     rgba(255, 255, 255, 0.1) 80%,
     transparent 100%
   );
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-xl);
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--space-xl);
 }
 
 .footer-content {
@@ -93,18 +93,18 @@ const { t } = useTranslations()
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--space-md);
 }
 
 .copyright p {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
   margin: 0;
 }
 
 .social-links {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-md);
   align-items: center;
 }
 
@@ -117,13 +117,13 @@ const { t } = useTranslations()
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.8);
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   text-decoration: none;
 }
 
 .social-link:hover {
-  background: rgba(255, 193, 7, 0.2);
-  color: #ffc107;
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--color-primary);
   transform: translateY(-2px);
 }
 
@@ -136,7 +136,7 @@ const { t } = useTranslations()
   .footer-content {
     flex-direction: column;
     text-align: center;
-    gap: 1.5rem;
+    gap: var(--space-lg);
   }
 
   .social-links {

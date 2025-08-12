@@ -75,7 +75,32 @@ The application is currently a single-page promotional site with:
 - Router is set up but no routes are defined
 - Components and views directories are empty - all functionality is in App.vue
 - Uses modern Vue 3 Composition API with `<script setup>` syntax
-- Tailwind CSS is configured with PostCSS
+- **Tailwind CSS is configured with PostCSS - ALWAYS USE TAILWIND CLASSES**
+
+## Styling Guidelines
+
+### IMPORTANT: Use Tailwind CSS
+- **ALWAYS use Tailwind utility classes** instead of custom CSS
+- **Avoid writing custom styles** unless absolutely necessary for animations or very specific needs
+- **Use Tailwind's design system** for spacing, colors, typography, and layout
+- **Responsive design** should use Tailwind's responsive prefixes (sm:, md:, lg:, xl:, 2xl:)
+
+### Typography Classes to Use
+- **Headings**: `text-4xl lg:text-5xl xl:text-6xl font-bold` (responsive sizing)
+- **Body text**: `text-lg lg:text-xl` for main content
+- **Secondary text**: `text-base lg:text-lg` for descriptions
+- **Colors**: `text-white`, `text-amber-400`, `text-gray-200`, `text-gray-400`
+
+### Layout Classes to Use
+- **Containers**: `max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`
+- **Wide containers**: `max-w-screen-2xl mx-auto px-2 sm:px-4`
+- **Sections**: `min-h-screen flex items-center justify-center py-16 lg:py-20`
+- **Grids**: `grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16`
+
+### Spacing Classes to Use
+- **Margins**: `mb-4`, `mb-6`, `mb-8`, `mt-8`, `mt-12`
+- **Padding**: `p-4`, `p-6`, `p-8`, `px-8 py-6`
+- **Gaps**: `gap-4`, `gap-6`, `gap-8`, `gap-12`
 
 ## Making Sections Visible
 
@@ -135,3 +160,11 @@ For a section called "eventLinks":
 2. `const isEventLinksVisible = ref(false)`
 3. Add to observer callback and registration
 4. Use `ref="eventLinksSection"` and `:class="{ visible: isEventLinksVisible }"` in template
+
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
+
+**CRITICAL: ALWAYS USE TAILWIND CSS CLASSES - DO NOT WRITE CUSTOM CSS UNLESS ABSOLUTELY NECESSARY**

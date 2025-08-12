@@ -1,1 +1,6 @@
 @import 'tailwindcss';
+
+/* Custom gradient for accent shapes */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}

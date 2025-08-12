@@ -30,7 +30,8 @@ const { sectionRef, isVisible } = useScrollAnimation()
           </div>
         </div>
         <div class="relative h-96 lg:h-[400px] flex items-center justify-center">
-          <div class="absolute w-48 h-48 lg:w-52 lg:h-52 bg-gradient-radial from-amber-400/30 via-amber-400/10 to-transparent rounded-full top-1/5 right-1/10 opacity-15 animate-pulse"></div>
+          <div class="absolute w-48 h-48 lg:w-52 lg:h-52 rounded-full top-1/5 right-1/10 animate-pulse -z-10 accent-glow"></div>
+          <div class="absolute w-32 h-32 lg:w-36 lg:h-36 rounded-full top-3/5 right-1/4 animate-pulse -z-10 accent-glow-secondary"></div>
         </div>
       </div>
     </div>
@@ -38,14 +39,38 @@ const { sectionRef, isVisible } = useScrollAnimation()
 </template>
 
 <style scoped>
+.accent-glow {
+  background: radial-gradient(
+    circle,
+    rgba(245, 158, 11, 0.15) 0%,
+    rgba(245, 158, 11, 0.08) 40%,
+    rgba(245, 158, 11, 0.03) 70%,
+    transparent 100%
+  );
+  opacity: 0.2;
+  filter: blur(15px);
+}
+
+.accent-glow-secondary {
+  background: radial-gradient(
+    circle,
+    rgba(245, 158, 11, 0.1) 0%,
+    rgba(245, 158, 11, 0.05) 30%,
+    rgba(245, 158, 11, 0.02) 60%,
+    transparent 100%
+  );
+  opacity: 0.15;
+  filter: blur(20px);
+}
+
 @keyframes pulse-accent {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.15;
+    opacity: 0.7;
   }
   50% {
     transform: scale(1.2);
-    opacity: 0.25;
+    opacity: 0.9;
   }
 }
 

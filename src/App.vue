@@ -2,6 +2,8 @@
 import LanguageToggle from '@/components/LanguageToggle.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
+import EventInfoSection from '@/components/EventInfoSection.vue'
+import WhyAdAstraSection from '@/components/WhyAdAstraSection.vue'
 import ProgramSection from '@/components/ProgramSection.vue'
 import NewsSection from '@/components/NewsSection.vue'
 import PartnersSection from '@/components/PartnersSection.vue'
@@ -23,6 +25,14 @@ useBackgroundAnimations()
 
     <!-- Floating decorative elements -->
     <div class="floating-accent accent-1"></div>
+
+    <div class="layout-container layout-offset-left">
+      <EventInfoSection />
+    </div>
+
+    <div class="layout-container layout-offset-right">
+      <WhyAdAstraSection />
+    </div>
 
     <div class="layout-container layout-offset-left">
       <ProgramSection />

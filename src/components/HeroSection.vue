@@ -15,6 +15,15 @@ const { t } = useTranslations()
           {{ t.description }}
         </div>
         <div class="text-yellow-500 text-8xl font-extrabold font-sans mt-8">09.05</div>
+        
+        <a 
+          :href="t.registrationUrl" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-bold text-xl py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg mt-8"
+        >
+          {{ t.registrationTitle }}
+        </a>
       </div>
       <div class="flex-1 flex justify-center items-center max-w-lg min-h-96">
         <img

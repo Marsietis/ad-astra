@@ -7,29 +7,19 @@ const { sectionRef, isVisible } = useScrollAnimation()
 </script>
 
 <template>
-  <section
-    ref="sectionRef"
-    class="content-section"
-    :class="{ visible: isVisible }"
-  >
+  <section ref="sectionRef" class="content-section" :class="{ visible: isVisible }">
     <div class="content-container">
       <div class="content-grid">
-        <div class="content-text">
-          <h2 class="text-white text-7xl font-bold font-sans mb-8 text-left">
-            {{ t.whatIsAdAstra }}
-          </h2>
-          <div class="text-white text-xl font-light font-sans mb-4 text-left">
-            {{ t.aboutText1 }}
-          </div>
-          <div class="text-white text-xl font-light font-sans mb-4 text-left">
-            {{ t.aboutText2 }}
-          </div>
-          <div class="text-white text-xl font-light font-sans mb-4 text-left">
-            {{ t.aboutText3 }}
-          </div>
-        </div>
         <div class="content-accent">
           <div class="accent-shape accent-shape-1"></div>
+        </div>
+        <div class="content-text">
+          <h2 class="text-white text-7xl font-bold font-sans mb-8 text-right">
+            {{ t.whyAdAstraTitle }} ✨
+          </h2>
+          <div class="text-white text-xl font-light font-sans mb-4 text-right">
+            {{ t.whyAdAstraText }}
+          </div>
         </div>
       </div>
     </div>
@@ -63,7 +53,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
 
 .content-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
   gap: 4rem;
   align-items: center;
   min-height: 60vh;
@@ -93,13 +83,13 @@ const { sectionRef, isVisible } = useScrollAnimation()
   background: radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, transparent 70%);
   border-radius: 50%;
   top: 20%;
-  right: 10%;
+  left: 10%;
   animation: pulse-accent 6s ease-in-out infinite;
 }
 
-
 @keyframes pulse-accent {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.15;
   }
@@ -109,7 +99,6 @@ const { sectionRef, isVisible } = useScrollAnimation()
   }
 }
 
-
 @media (max-width: 768px) {
   .content-section {
     padding: 2rem 1rem;
@@ -118,30 +107,23 @@ const { sectionRef, isVisible } = useScrollAnimation()
   .content-container h2 {
     font-size: 2rem;
   }
-  
+
   .content-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
   }
-  
+
   .content-accent {
     height: 200px;
     order: -1;
   }
-  
+
   .accent-shape-1 {
     width: 120px;
     height: 120px;
     top: 10%;
-    right: 20%;
-  }
-  
-  .accent-shape-2 {
-    width: 80px;
-    height: 80px;
-    bottom: 20%;
-    left: 25%;
+    left: 20%;
   }
 }
 </style>

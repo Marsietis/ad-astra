@@ -37,7 +37,6 @@ const { currentLanguage, toggleLanguage } = useTranslations()
     top: 2rem;
     right: 1rem;
     z-index: 10000;
-    transform: translateY(-50%);
   }
 }
 
@@ -50,14 +49,12 @@ const { currentLanguage, toggleLanguage } = useTranslations()
   border-radius: 2rem;
   padding: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .language-toggle:hover {
   background: rgba(0, 0, 0, 0.9);
   border-color: rgba(255, 193, 7, 0.5);
-  transform: translateY(-50%) translateY(-2px);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
 }
 
@@ -67,7 +64,6 @@ const { currentLanguage, toggleLanguage } = useTranslations()
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 1.5rem;
-  transition: all 0.3s ease;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -105,7 +101,6 @@ const { currentLanguage, toggleLanguage } = useTranslations()
   .language-toggle-container {
     top: 2rem;
     right: 1rem;
-    transform: translateY(-50%);
   }
   
   .language-option {

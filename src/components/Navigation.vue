@@ -87,9 +87,9 @@ onUnmounted(() => {
           class="absolute -left-4 top-1/2 -translate-y-1/2 w-2 h-0.5 bg-amber-400 animate-pulse"
         ></div>
 
-        <!-- Hover effect -->
+        <!-- Hover effect - shooting star -->
         <div
-          class="absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-200"
+          class="absolute -left-2 top-1/2 -translate-y-1/2 shooting-star-nav"
         ></div>
       </button>
     </div>
@@ -130,5 +130,44 @@ onUnmounted(() => {
 
 .animate-star-pulse {
   animation: star-pulse 2s ease-in-out infinite;
+}
+
+/* Shooting star animation for hover effect */
+.shooting-star-nav {
+  position: relative;
+}
+
+.shooting-star-nav::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, white);
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.group:hover .shooting-star-nav::before {
+  width: 12px;
+  opacity: 1;
+  animation: shoot-tail 0.6s ease-out forwards;
+}
+
+@keyframes shoot-tail {
+  0% {
+    width: 0px;
+    opacity: 0;
+  }
+  30% {
+    width: 12px;
+    opacity: 1;
+  }
+  100% {
+    width: 40px;
+    opacity: 0;
+  }
 }
 </style>

@@ -56,10 +56,10 @@ body {
 
 .stars {
   position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  top: -50vh;
+  left: -50vw;
+  width: 200vw;
+  height: 200vh;
   z-index: -1;
   pointer-events: none;
   animation: stellar-rotation 360s linear infinite;

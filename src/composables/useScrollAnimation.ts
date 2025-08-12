@@ -51,7 +51,15 @@ export function useScrollAnimation() {
 }
 
 export function useBackgroundAnimations() {
+  // Store initial viewport dimensions to prevent jumps when browser bar appears/disappears
+  let initialViewportWidth = 0
+  let initialViewportHeight = 0
+  
   onMounted(() => {
+    // Capture initial viewport dimensions
+    initialViewportWidth = window.innerWidth
+    initialViewportHeight = window.innerHeight
+    
     createStars()
     
     // Only create shooting stars if user hasn't requested reduced motion
@@ -72,8 +80,8 @@ export function useBackgroundAnimations() {
     starsContainer.classList.add('stars')
     document.body.appendChild(starsContainer)
 
-    // Determine star count based on device capabilities
-    const isMobile = window.innerWidth <= 768
+    // Determine star count based on device capabilities using initial dimensions
+    const isMobile = initialViewportWidth <= 768
     const starCount = isMobile ? 600 : 1000
     const svgStarCount = isMobile ? 15 : 30
     const fivePointStarCount = isMobile ? 25 : 50
@@ -149,36 +157,36 @@ export function useBackgroundAnimations() {
       switch (direction) {
         case 0: // Left to right
           startX = Math.random() * -100 - 50
-          startY = Math.random() * 100
+          startY = Math.random() * initialViewportHeight
           deltaX = 200 + Math.random() * 400
           deltaY = (Math.random() - 0.5) * 200
           rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
           break
         case 1: // Right to left
-          startX = window.innerWidth + Math.random() * 100 + 50
-          startY = Math.random() * 100
+          startX = initialViewportWidth + Math.random() * 100 + 50
+          startY = Math.random() * initialViewportHeight
           deltaX = -(200 + Math.random() * 400)
           deltaY = (Math.random() - 0.5) * 200
           rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
           break
         case 2: // Top to bottom
-          startX = Math.random() * 100
+          startX = Math.random() * initialViewportWidth
           startY = Math.random() * -100 - 50
           deltaX = (Math.random() - 0.5) * 200
           deltaY = 200 + Math.random() * 400
           rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
           break
         case 3: // Bottom to top
-          startX = Math.random() * 100
-          startY = window.innerHeight + Math.random() * 100 + 50
+          startX = Math.random() * initialViewportWidth
+          startY = initialViewportHeight + Math.random() * 100 + 50
           deltaX = (Math.random() - 0.5) * 200
           deltaY = -(200 + Math.random() * 400)
           rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
           break
       }
 
-      shootingStar.style.left = startX + (direction < 2 ? 'px' : '%')
-      shootingStar.style.top = startY + (direction >= 2 ? 'px' : '%')
+      shootingStar.style.left = startX + 'px'
+      shootingStar.style.top = startY + 'px'
 
       shootingStar.style.setProperty('--delta-x', deltaX + 'px')
       shootingStar.style.setProperty('--delta-y', deltaY + 'px')
@@ -197,13 +205,13 @@ export function useBackgroundAnimations() {
     // Create shooting stars at regular intervals
     const shootingStarInterval = () => {
       createShootingStar()
-      const isMobile = window.innerWidth <= 768
+      const isMobile = initialViewportWidth <= 768
       const interval = isMobile ? 10000 + Math.random() * 15000 : 5000 + Math.random() * 10000
       shootingStarIntervalId = setTimeout(shootingStarInterval, interval)
     }
 
     // Start the first shooting star after page has loaded and settled
-    const isMobile = window.innerWidth <= 768
+    const isMobile = initialViewportWidth <= 768
     const initialDelay = isMobile ? 15000 + Math.random() * 10000 : 10000 + Math.random() * 8000
     shootingStarIntervalId = setTimeout(shootingStarInterval, initialDelay)
   }

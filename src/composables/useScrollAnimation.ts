@@ -1,6 +1,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 let observer: IntersectionObserver | null = null
+let shootingStarIntervalId: number | null = null
 
 export function useScrollAnimation() {
   const sectionRef = ref<HTMLElement>()
@@ -57,6 +58,12 @@ export function useBackgroundAnimations() {
   })
 
   function createStars() {
+    // Remove existing stars container if it exists
+    const existingContainer = document.querySelector('.stars')
+    if (existingContainer) {
+      existingContainer.remove()
+    }
+
     const starsContainer = document.createElement('div')
     starsContainer.classList.add('stars')
     document.body.appendChild(starsContainer)
@@ -101,6 +108,12 @@ export function useBackgroundAnimations() {
   }
 
   function createShootingStars() {
+    // Clear existing shooting star interval
+    if (shootingStarIntervalId) {
+      clearTimeout(shootingStarIntervalId)
+      shootingStarIntervalId = null
+    }
+
     const createShootingStar = () => {
       const shootingStar = document.createElement('div')
       shootingStar.classList.add('shooting-star')
@@ -157,17 +170,23 @@ export function useBackgroundAnimations() {
       }, 3000)
     }
 
-    // Create shooting stars at regular intervals for testing
+    // Create shooting stars at regular intervals
     const shootingStarInterval = () => {
       createShootingStar()
-      setTimeout(shootingStarInterval, 1000) // Every 5 seconds
+      shootingStarIntervalId = setTimeout(shootingStarInterval, 8000 + Math.random() * 7000) // Every 8-15 seconds
     }
 
     // Start the first shooting star after a random delay
-    setTimeout(shootingStarInterval, Math.random() * 5000)
+    shootingStarIntervalId = setTimeout(shootingStarInterval, Math.random() * 5000)
   }
 
   function createShapes() {
+    // Remove existing shapes container if it exists
+    const existingContainer = document.querySelector('.background-shapes')
+    if (existingContainer) {
+      existingContainer.remove()
+    }
+
     const shapesContainer = document.createElement('div')
     shapesContainer.classList.add('background-shapes')
     document.body.appendChild(shapesContainer)

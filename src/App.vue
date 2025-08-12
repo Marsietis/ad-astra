@@ -61,7 +61,7 @@ body {
   position: absolute;
   background: white;
   border-radius: 50%;
-  animation: twinkle 4s ease-in-out infinite alternate;
+  animation: twinkle 8s ease-in-out infinite;
 }
 
 .star:nth-child(2n) {
@@ -81,10 +81,10 @@ body {
 }
 
 @keyframes twinkle {
-  0% {
-    opacity: 0.3;
+  0%, 100% {
+    opacity: 0.6;
   }
-  100% {
+  50% {
     opacity: 1;
   }
 }
@@ -107,23 +107,23 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   filter: brightness(0) invert(1);
-  animation: twinkle-rotate 8s ease-in-out infinite alternate;
+  animation: twinkle-rotate 12s ease-in-out infinite;
   border-radius: 0 !important;
   background-color: transparent !important;
 }
 
 @keyframes twinkle-rotate {
   0% {
-    opacity: 0.3;
-    transform: rotate(0deg) scale(0.8);
+    opacity: 0.7;
+    transform: scale(0.9);
   }
   50% {
     opacity: 1;
-    transform: rotate(180deg) scale(1.2);
+    transform: scale(1.2);
   }
   100% {
-    opacity: 0.5;
-    transform: rotate(360deg) scale(1);
+    opacity: 0.7;
+    transform: scale(1);
   }
 }
 
@@ -143,15 +143,15 @@ body {
     2% 35%,
     39% 35%
   );
-  animation: twinkle-pulse 5s ease-in-out infinite alternate;
+  animation: twinkle-pulse 10s ease-in-out infinite;
 }
 
 @keyframes twinkle-pulse {
-  0% {
-    opacity: 0.4;
+  0%, 100% {
+    opacity: 0.7;
     transform: scale(0.9);
   }
-  100% {
+  50% {
     opacity: 1;
     transform: scale(1.1);
   }

@@ -8,6 +8,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
 
 <template>
   <section
+    id="news"
     ref="sectionRef"
     class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out"
     :class="{ 'opacity-100 translate-y-0': isVisible }"

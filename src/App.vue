@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Navigation from '@/components/Navigation.vue'
 import LanguageToggle from '@/components/LanguageToggle.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
@@ -16,6 +17,7 @@ useBackgroundAnimations()
 
 <template>
   <div id="app">
+    <Navigation />
     <LanguageToggle />
     <HeroSection />
 

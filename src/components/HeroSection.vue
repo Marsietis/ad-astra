@@ -6,7 +6,7 @@ const { t } = useTranslations()
 </script>
 
 <template>
-  <main class="min-h-screen flex items-center px-4 lg:px-8 relative">
+  <main id="hero" class="min-h-screen flex items-center px-4 lg:px-8 relative">
     <div
       class="flex items-center justify-between w-full max-w-8xl mx-32 gap-16 flex-col lg:flex-row text-center lg:text-left"
     >

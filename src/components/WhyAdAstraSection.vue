@@ -7,7 +7,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
 </script>
 
 <template>
-  <section ref="sectionRef" class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out" :class="{ 'opacity-100 translate-y-0': isVisible }">
+  <section id="why-ad-astra" ref="sectionRef" class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out" :class="{ 'opacity-100 translate-y-0': isVisible }">
     <div class="max-w-screen-2xl mx-auto px-2 sm:px-4 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[60vh]">
         <div class="relative h-96 lg:h-[400px] flex items-center justify-center">

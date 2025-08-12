@@ -1,0 +1,134 @@
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useTranslations } from '@/composables/useTranslations'
+
+const { t } = useTranslations()
+
+const isVisible = ref(false)
+const activeSection = ref('')
+
+const navigationItems = computed(() => [
+  { id: 'hero', label: t.value.navHome, href: '#hero' },
+  { id: 'about', label: t.value.navAbout, href: '#about' },
+  { id: 'event-info', label: t.value.navEvent, href: '#event-info' },
+  { id: 'why-ad-astra', label: t.value.navWhy, href: '#why-ad-astra' },
+  { id: 'program', label: t.value.navProgram, href: '#program' },
+  { id: 'news', label: t.value.navNews, href: '#news' },
+  { id: 'partners', label: t.value.navPartners, href: '#partners' },
+])
+
+const handleScroll = () => {
+  const heroSection = document.getElementById('hero')
+  const heroHeight = heroSection ? heroSection.offsetHeight : window.innerHeight
+
+  // Hide navigation on hero section
+  isVisible.value = window.scrollY > heroHeight - 100
+
+  // Find active section
+  const sections = navigationItems.value.map((item) =>
+    document.getElementById(item.id.replace('#', '')),
+  )
+  const scrollPosition = window.scrollY + 100
+
+  // Default to hero if at the top
+  if (window.scrollY < 50) {
+    activeSection.value = 'hero'
+  } else {
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = sections[i]
+      if (section && section.offsetTop <= scrollPosition) {
+        activeSection.value = navigationItems.value[i].id
+        break
+      }
+    }
+  }
+}
+
+const scrollToSection = (href: string) => {
+  const targetId = href.replace('#', '')
+  const element = document.getElementById(targetId)
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  handleScroll() // Initial check
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
+
+<template>
+  <nav
+    class="fixed left-4 top-1/2 -translate-y-1/2 z-50 transition-all duration-500"
+    :class="[isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full']"
+  >
+    <!-- Navigation Links -->
+    <div class="flex flex-col space-y-3">
+      <button
+        v-for="item in navigationItems"
+        :key="item.id"
+        @click="scrollToSection(item.href)"
+        class="uppercase relative text-sm font-medium transition-all duration-200 group"
+        :class="[activeSection === item.id ? 'text-amber-400' : 'text-white/60 hover:text-white']"
+      >
+        <span class="relative z-10">{{ item.label }}</span>
+
+        <!-- Active indicator line -->
+        <div
+          v-if="activeSection === item.id"
+          class="absolute -left-4 top-1/2 -translate-y-1/2 w-2 h-0.5 bg-amber-400 animate-pulse"
+        ></div>
+
+        <!-- Hover effect -->
+        <div
+          class="absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-200"
+        ></div>
+      </button>
+    </div>
+
+    <!-- Floating stars decoration -->
+    <div
+      class="absolute -top-6 left-2 w-1 h-1 bg-white rounded-full animate-pulse opacity-40"
+    ></div>
+    <div
+      class="absolute -bottom-6 left-4 w-1 h-1 bg-amber-400 rounded-full animate-pulse opacity-30"
+      style="animation-delay: 1.5s"
+    ></div>
+    <div
+      class="absolute top-1/3 -right-4 w-1 h-1 bg-white rounded-full animate-pulse opacity-20"
+      style="animation-delay: 0.8s"
+    ></div>
+  </nav>
+</template>
+
+<style scoped>
+/* Smooth scroll behavior for the entire document */
+:global(html) {
+  scroll-behavior: smooth;
+}
+
+/* Custom pulse animation for star effects */
+@keyframes star-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-star-pulse {
+  animation: star-pulse 2s ease-in-out infinite;
+}
+</style>

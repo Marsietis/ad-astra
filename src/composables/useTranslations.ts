@@ -69,6 +69,14 @@ const translations = {
     partnershipText: 'Norite tapti partneru? Susisiekite su mumis ir kartu kurkime puikų renginį!',
     contactEmail: 'kontaktai@adastra.vu.lt',
     organizatoriaiTitle: 'Organizatoriai',
+    // Navigation
+    navHome: 'Pradžia',
+    navAbout: 'Apie',
+    navEvent: 'Renginys',
+    navWhy: 'Kodėl',
+    navProgram: 'Programa',
+    navNews: 'Naujienos',
+    navPartners: 'Partneriai',
   },
   en: {
     subtitle: 'IN VILNIUS UNIVERSITY',
@@ -135,6 +143,14 @@ const translations = {
       "Want to become a partner? Contact us and let's create a great event together!",
     contactEmail: 'contact@adastra.vu.lt',
     organizatoriaiTitle: 'Organizers',
+    // Navigation
+    navHome: 'Home',
+    navAbout: 'About',
+    navEvent: 'Event',
+    navWhy: 'Why',
+    navProgram: 'Program',
+    navNews: 'News',
+    navPartners: 'Partners',
   },
 }
 

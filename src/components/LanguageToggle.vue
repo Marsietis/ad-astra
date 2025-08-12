@@ -30,6 +30,8 @@ const { currentLanguage, toggleLanguage } = useTranslations()
   top: 2rem;
   right: 2rem;
   z-index: 1000;
+  animation: none !important;
+  transition: none !important;
 }
 
 @media (max-width: 1024px) {
@@ -37,6 +39,7 @@ const { currentLanguage, toggleLanguage } = useTranslations()
     top: 2rem;
     right: 1rem;
     z-index: 10000;
+    transform: translateY(-50%);
   }
 }
 
@@ -50,6 +53,8 @@ const { currentLanguage, toggleLanguage } = useTranslations()
   padding: 0.5rem;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: none !important;
+  transition: none !important;
 }
 
 .language-toggle:hover {
@@ -101,6 +106,7 @@ const { currentLanguage, toggleLanguage } = useTranslations()
   .language-toggle-container {
     top: 2rem;
     right: 1rem;
+    transform: translateY(-50%);
   }
   
   .language-option {

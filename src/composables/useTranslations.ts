@@ -13,11 +13,10 @@ const translations = {
       'Jau sutikus naujus mokslo metus, į Vilniaus universitetą tradiciškai, jau 6-ąjį kartą kviečia VU SA integracijos festivalis „Ad astra"!',
     aboutText2:
       'Vilniaus universiteto Studentų atstovybės (VU SA) organizuojame festivalyje pajusk tikrąją studentišką dvasią per kontaktų mugę su universitete veikiančiomis studentiškomis iniciatyvomis, diskusijas studentui (-ei) aktualiomis temomis, uždaromąjį koncertą ir dar daugiau.',
-    aboutText3:
-      'Būtent čia susirinks Universiteto bendruomenė, todėl nepražiopsok!',
+    aboutText3: 'Būtent čia susirinks Universiteto bendruomenė, todėl nepražiopsok!',
     eventDate: 'Rugsėjo 5 d.',
-    eventTime: 'nuo 13:00 iki 22:00',
-    eventLocation: 'Vilniaus universiteto Centriniuose rūmuose',
+    eventTime: '13:00-22:00',
+    eventLocation: 'Vilniaus universiteto Centriniai rūmai',
     eventAddress: 'Universiteto g. 3, Vilnius',
     registrationTitle: 'REGISTRACIJA',
     registrationUrl: 'https://forms.office.com/e/16CCC0jR5H',
@@ -29,7 +28,8 @@ const translations = {
     locationLabel: 'Vieta',
     participationLabel: 'Dalyvavimas',
     whyAdAstraTitle: 'KODĖL AD ASTRA?',
-    whyAdAstraText: 'Nes pradedant nuo čia kylama į žvaigždes! Taigi, ko tu lauki? Mes atsakytume – Tavęs! Nesvarbu ar esi šviežiai įstojęs (-usi) ar studentas (-ė), VU bendruomenės narys (-ė) ar svečias Vilniuje, nesi dalyvavęs ar gal nė vieno festivalio nepraleidęs (-usi) – „Ad astroje" ko nors įdomaus atras kiekvienas (-a)!',
+    whyAdAstraText:
+      'Nes pradedant nuo čia kylama į žvaigždes! Taigi, ko tu lauki? Mes atsakytume – Tavęs! Nesvarbu ar esi šviežiai įstojęs (-usi) ar studentas (-ė), VU bendruomenės narys (-ė) ar svečias Vilniuje, nesi dalyvavęs ar gal nė vieno festivalio nepraleidęs (-usi) – „Ad astroje" ko nors įdomaus atras kiekvienas (-a)!',
     moreInfoSoon: 'Daugiau informacijos ir detali programa netrukus.',
     programTitle: 'Festivalio zonos ir programa',
     programDescription:
@@ -88,11 +88,10 @@ const translations = {
     aboutText1:
       'With the new academic year already underway, Vilnius University is hosting the 6th annual VU SA integration festival, Ad astra!',
     aboutText2:
-      'The Vilnius University Students\' Representation (VU SR) is organizing a festival where you can feel the true student spirit through a contact fair with student initiatives operating at the university, discussions on topics relevant to students, a closing concert, and much more.',
-    aboutText3:
-      'This is where the university community will gather, so don\'t miss it!',
+      "The Vilnius University Students' Representation (VU SR) is organizing a festival where you can feel the true student spirit through a contact fair with student initiatives operating at the university, discussions on topics relevant to students, a closing concert, and much more.",
+    aboutText3: "This is where the university community will gather, so don't miss it!",
     eventDate: 'September 5',
-    eventTime: 'from 1:00 p.m. to 10:00 p.m.',
+    eventTime: '13:00-22:00',
     eventLocation: 'Vilnius University Central Campus',
     eventAddress: 'Universiteto g. 3, Vilnius',
     registrationTitle: 'REGISTRATION',
@@ -105,7 +104,8 @@ const translations = {
     locationLabel: 'Location',
     participationLabel: 'Participation',
     whyAdAstraTitle: 'WHY AD ASTRA?',
-    whyAdAstraText: 'Because this is where the journey to the stars begins! So, what are you waiting for? We would say – you! Whether you are a new student or a current student, a member of the VU community or a guest in Vilnius, whether you have never participated or have never missed a single festival – everyone will find something interesting at Ad Astro!',
+    whyAdAstraText:
+      'Because this is where the journey to the stars begins! So, what are you waiting for? We would say – you! Whether you are a new student or a current student, a member of the VU community or a guest in Vilnius, whether you have never participated or have never missed a single festival – everyone will find something interesting at Ad Astro!',
     moreInfoSoon: 'More information and a detailed program will be available soon.',
     programTitle: 'Festival Zones and Program',
     programDescription:
@@ -170,6 +170,6 @@ export function useTranslations() {
   return {
     currentLanguage,
     t,
-    toggleLanguage
+    toggleLanguage,
   }
 }

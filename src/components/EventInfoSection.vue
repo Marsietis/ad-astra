@@ -20,7 +20,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
         </h2>
 
         <!-- Event Details -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-6 max-w-full mx-auto">
           <!-- Date -->
           <div class="text-center">
             <svg
@@ -72,7 +72,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
           </div>
 
           <!-- Location -->
-          <div class="text-center">
+          <div class="text-center flex flex-col items-center">
             <svg
               class="w-8 h-8 lg:w-10 lg:h-10 text-amber-400 mx-auto mb-6"
               fill="none"
@@ -97,7 +97,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
             >
               {{ t.locationLabel }}
             </div>
-            <div class="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-3">
+            <div class="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-3 text-center">
               {{ t.eventLocation }}
             </div>
             <div class="text-lg lg:text-xl text-gray-300">

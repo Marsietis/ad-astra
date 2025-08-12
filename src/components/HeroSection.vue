@@ -8,22 +8,27 @@ const { showHint } = useScrollHint()
 </script>
 
 <template>
-  <main id="hero" class="min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-8 relative pt-20 sm:pt-24 lg:pt-0 lg:items-center">
+  <main
+    id="hero"
+    class="min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-8 relative pt-20 sm:pt-24 lg:pt-0 lg:items-center"
+  >
     <div
       class="flex items-center justify-center lg:justify-between w-full max-w-7xl mx-auto gap-8 lg:gap-16 flex-col lg:flex-row text-center lg:text-left"
     >
       <div class="flex-1 max-w-3xl">
         <h1
-          class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-amber-400 mb-4 lg:mb-6 leading-none tracking-tight"
+          class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-amber-400 mb-4 lg:mb-6 leading-none tracking-tight"
         >
           AD ASTRA
         </h1>
         <div
-          class="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-4 lg:mb-6 leading-tight tracking-tight"
+          class="text-3xl sm:text-4xl lg:text-6xl xl:text-6xl font-extrabold text-white mb-4 lg:mb-6 leading-tight tracking-tight"
         >
           {{ t.subtitle }}
         </div>
-        <div class="text-lg sm:text-xl lg:text-3xl font-light text-white mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+        <div
+          class="text-lg sm:text-xl lg:text-3xl font-light text-white mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+        >
           {{ t.description }}
         </div>
         <div
@@ -54,7 +59,9 @@ const { showHint } = useScrollHint()
           </svg>
         </a>
       </div>
-      <div class="flex-1 flex justify-center items-center max-w-sm lg:max-w-lg order-first lg:order-last">
+      <div
+        class="flex-1 flex justify-center items-center max-w-sm lg:max-w-lg order-first lg:order-last"
+      >
         <img
           :src="logoUrl"
           alt="Ad Astra Logo"
@@ -62,7 +69,7 @@ const { showHint } = useScrollHint()
         />
       </div>
     </div>
-    <div 
+    <div
       class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-opacity duration-300"
       :class="{ 'opacity-0 pointer-events-none': showHint }"
     >

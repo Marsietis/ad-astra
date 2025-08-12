@@ -20,10 +20,10 @@ useBackgroundAnimations()
     <HeroSection />
 
     <AboutSection />
-    
+
     <!-- Floating decorative elements -->
     <div class="floating-accent accent-1"></div>
-    
+
     <EventInfoSection />
     <WhyAdAstraSection />
     <ProgramSection />
@@ -49,12 +49,14 @@ body {
 
 .stars {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
   z-index: -1;
   pointer-events: none;
+  animation: stellar-rotation 240s linear infinite;
+  transform-origin: 50% 50%;
 }
 
 .star {
@@ -81,7 +83,8 @@ body {
 }
 
 @keyframes twinkle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.6;
   }
   50% {
@@ -89,9 +92,18 @@ body {
   }
 }
 
+@keyframes stellar-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .star-tiny {
-  width: 2px;
-  height: 2px;
+  width: 1px;
+  height: 1px;
 }
 
 .star-small {
@@ -100,8 +112,8 @@ body {
 }
 
 .star-svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background-image: url('@/assets/star.svg');
   background-size: contain;
   background-repeat: no-repeat;
@@ -128,8 +140,8 @@ body {
 }
 
 .star-5point {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background: white;
   clip-path: polygon(
     50% 0%,
@@ -147,7 +159,8 @@ body {
 }
 
 @keyframes twinkle-pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.7;
     transform: scale(0.9);
   }

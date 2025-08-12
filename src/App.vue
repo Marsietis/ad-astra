@@ -45,7 +45,7 @@ useBackgroundAnimations()
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(160deg, #030408 0%, #030408 85%, #080c32 100%);
+  background: linear-gradient(160deg, #030408 0%, #030408 70%, #080c32 100%);
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;

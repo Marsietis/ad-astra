@@ -62,7 +62,7 @@ body {
   height: 200%;
   z-index: -1;
   pointer-events: none;
-  animation: stellar-rotation 240s linear infinite;
+  animation: stellar-rotation 360s linear infinite;
   transform-origin: 50% 50%;
   will-change: transform;
 }
@@ -71,32 +71,32 @@ body {
   position: absolute;
   background: white;
   border-radius: 50%;
-  animation: twinkle 8s ease-in-out infinite;
+  animation: twinkle 12s ease-in-out infinite;
 }
 
 .star:nth-child(2n) {
-  animation-delay: -1s;
+  animation-delay: 2s;
 }
 
 .star:nth-child(3n) {
-  animation-delay: -2s;
+  animation-delay: 4s;
 }
 
 .star:nth-child(4n) {
-  animation-delay: -0.5s;
+  animation-delay: 1s;
 }
 
 .star:nth-child(5n) {
-  animation-delay: -1.5s;
+  animation-delay: 3s;
 }
 
 @keyframes twinkle {
   0%,
   100% {
-    opacity: 0.6;
+    opacity: 0.4;
   }
   50% {
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
@@ -390,7 +390,7 @@ body {
 /* Star size adjustments for mobile */
 @media (max-width: 768px) {
   .stars {
-    animation: stellar-rotation 300s linear infinite;
+    animation: stellar-rotation 420s linear infinite;
   }
   
   .star-svg {
@@ -432,6 +432,37 @@ body {
   }
   100% {
     width: 0;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .stars {
+    animation: none;
+  }
+  
+  .star {
+    animation: none;
+    opacity: 0.6;
+  }
+  
+  .star-svg {
+    animation: none;
+    opacity: 0.8;
+  }
+  
+  .star-5point {
+    animation: none;
+    opacity: 0.7;
+  }
+  
+  .shooting-star {
+    display: none;
+  }
+  
+  .floating-accent {
+    animation: none;
+    opacity: 0.1;
   }
 }
 

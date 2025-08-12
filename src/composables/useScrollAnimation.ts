@@ -53,7 +53,12 @@ export function useScrollAnimation() {
 export function useBackgroundAnimations() {
   onMounted(() => {
     createStars()
-    createShootingStars()
+    
+    // Only create shooting stars if user hasn't requested reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!prefersReducedMotion) {
+      createShootingStars()
+    }
   })
 
   function createStars() {
@@ -197,9 +202,9 @@ export function useBackgroundAnimations() {
       shootingStarIntervalId = setTimeout(shootingStarInterval, interval)
     }
 
-    // Start the first shooting star after a random delay
+    // Start the first shooting star after page has loaded and settled
     const isMobile = window.innerWidth <= 768
-    const initialDelay = isMobile ? Math.random() * 8000 : Math.random() * 5000
+    const initialDelay = isMobile ? 15000 + Math.random() * 10000 : 10000 + Math.random() * 8000
     shootingStarIntervalId = setTimeout(shootingStarInterval, initialDelay)
   }
 

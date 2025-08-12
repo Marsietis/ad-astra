@@ -68,13 +68,27 @@ export function useBackgroundAnimations() {
     starsContainer.classList.add('stars')
     document.body.appendChild(starsContainer)
 
-    // Create regular dot stars
+    // Create regular dot stars with weighted size distribution
     for (let i = 0; i < 350; i++) {
       const star = document.createElement('div')
-      const sizes = ['star-tiny', 'star-small']
-      const randomSize = sizes[Math.floor(Math.random() * sizes.length)]
 
-      star.classList.add('star', randomSize)
+      // Weighted size distribution (realistic star field with more tiny stars)
+      const rand = Math.random()
+      let starSize
+      if (rand < 0.15) starSize = 'star-nano'
+      else if (rand < 0.35) starSize = 'star-micro'
+      else if (rand < 0.5) starSize = 'star-tiny'
+      else if (rand < 0.63) starSize = 'star-xs'
+      else if (rand < 0.75) starSize = 'star-small'
+      else if (rand < 0.84) starSize = 'star-sm-plus'
+      else if (rand < 0.91) starSize = 'star-medium'
+      else if (rand < 0.95) starSize = 'star-md-plus'
+      else if (rand < 0.98) starSize = 'star-large'
+      else if (rand < 0.995) starSize = 'star-lg-plus'
+      else if (rand < 0.999) starSize = 'star-xl'
+      else starSize = 'star-xxl'
+
+      star.classList.add('star', starSize)
       star.style.left = Math.random() * 100 + '%'
       star.style.top = Math.random() * 100 + '%'
       star.style.animationDelay = Math.random() * 4 + 's'

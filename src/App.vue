@@ -107,14 +107,76 @@ body {
   }
 }
 
+.star-nano {
+  width: 0.3px;
+  height: 0.3px;
+  filter: blur(0.2px);
+}
+
+.star-micro {
+  width: 0.5px;
+  height: 0.5px;
+  filter: blur(0.3px);
+}
+
 .star-tiny {
   width: 1px;
   height: 1px;
+  filter: blur(0.5px);
+}
+
+.star-xs {
+  width: 1.5px;
+  height: 1.5px;
+  filter: blur(0.6px);
 }
 
 .star-small {
+  width: 2px;
+  height: 2px;
+  filter: blur(0.7px);
+}
+
+.star-sm-plus {
+  width: 2.5px;
+  height: 2.5px;
+  filter: blur(0.75px);
+}
+
+.star-medium {
+  width: 3px;
+  height: 3px;
+  filter: blur(0.8px);
+}
+
+.star-md-plus {
+  width: 3.5px;
+  height: 3.5px;
+  filter: blur(0.9px);
+}
+
+.star-large {
   width: 4px;
   height: 4px;
+  filter: blur(1px);
+}
+
+.star-lg-plus {
+  width: 5px;
+  height: 5px;
+  filter: blur(1.2px);
+}
+
+.star-xl {
+  width: 6px;
+  height: 6px;
+  filter: blur(1.5px);
+}
+
+.star-xxl {
+  width: 7px;
+  height: 7px;
+  filter: blur(1.8px);
 }
 
 .star-svg {

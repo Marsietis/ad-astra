@@ -6,6 +6,7 @@ const { t } = useTranslations()
 
 <template>
   <footer class="footer">
+    <div class="footer-separator"></div>
     <div class="footer-container">
       <div class="footer-content">
         <div class="copyright">
@@ -63,11 +64,22 @@ const { t } = useTranslations()
 
 <style scoped>
 .footer {
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem 0;
   margin-top: 2rem;
+}
+
+.footer-separator {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 20%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 80%,
+    transparent 100%
+  );
+  margin-bottom: 2rem;
 }
 
 .footer-container {

@@ -10,54 +10,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
   <section ref="sectionRef" class="content-section" :class="{ visible: isVisible }">
     <div class="content-container">
       <h2 class="text-white text-7xl font-bold font-sans mb-8 text-left">{{ t.partnersTitle }}</h2>
-      <div class="text-white text-xl font-light font-sans mb-8 text-left">
-        {{ t.partnersDescription }}
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-        <div class="text-center">
-          <div
-            class="bg-gray-800/30 p-8 rounded-lg backdrop-blur-sm h-32 flex items-center justify-center mb-4"
-          >
-            <div class="text-yellow-500 text-3xl font-bold">VU SA</div>
-          </div>
-          <h3 class="text-white text-xl font-bold mb-2">
-            {{ t.vusaPartner }}
-          </h3>
-          <p class="text-white text-sm font-light">
-            {{ t.vusaPartnerDesc }}
-          </p>
-        </div>
-
-        <div class="text-center">
-          <div
-            class="bg-gray-800/30 p-8 rounded-lg backdrop-blur-sm h-32 flex items-center justify-center mb-4"
-          >
-            <div class="text-yellow-500 text-3xl font-bold">VU</div>
-          </div>
-          <h3 class="text-white text-xl font-bold mb-2">{{ t.vuPartner }}</h3>
-          <p class="text-white text-sm font-light">
-            {{ t.vuPartnerDesc }}
-          </p>
-        </div>
-
-        <div class="text-center">
-          <div
-            class="bg-gray-800/30 p-8 rounded-lg backdrop-blur-sm h-32 flex items-center justify-center mb-4"
-          >
-            <div class="text-yellow-500 text-2xl font-bold">Fakultetai</div>
-          </div>
-          <h3 class="text-white text-xl font-bold mb-2">{{ t.facultiesPartner }}</h3>
-          <p class="text-white text-sm font-light">{{ t.facultiesPartnerDesc }}</p>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <div class="text-white text-lg font-light mb-4">
-          {{ t.partnershipText }}
-        </div>
-        <div class="text-yellow-500 text-xl font-bold">{{ t.contactEmail }}</div>
-      </div>
+      <img src="@/assets/partneriai.png" alt="Partners" class="w-full h-auto" />
     </div>
   </section>
 </template>

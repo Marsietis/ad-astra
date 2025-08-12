@@ -29,7 +29,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
             {{ t.aboutText3 }}
           </div>
         </div>
-        <div class="relative h-64 sm:h-80 lg:h-[400px] flex items-center justify-center order-first lg:order-last">
+        <div class="relative h-64 sm:h-80 lg:h-[400px] flex items-center justify-center order-first lg:order-last hidden md:block">
           <div
             class="absolute w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-full top-1/4 right-1/6 lg:top-1/5 lg:right-1/10 animate-pulse -z-10 accent-glow"
           ></div>

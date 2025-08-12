@@ -34,9 +34,10 @@ const { currentLanguage, toggleLanguage } = useTranslations()
 
 @media (max-width: 1024px) {
   .language-toggle-container {
-    top: 1rem;
+    top: 2rem;
     right: 1rem;
     z-index: 10000;
+    transform: translateY(-50%);
   }
 }
 
@@ -56,7 +57,7 @@ const { currentLanguage, toggleLanguage } = useTranslations()
 .language-toggle:hover {
   background: rgba(0, 0, 0, 0.9);
   border-color: rgba(255, 193, 7, 0.5);
-  transform: translateY(-2px);
+  transform: translateY(-50%) translateY(-2px);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
 }
 
@@ -102,8 +103,9 @@ const { currentLanguage, toggleLanguage } = useTranslations()
 
 @media (max-width: 768px) {
   .language-toggle-container {
-    top: 1rem;
+    top: 2rem;
     right: 1rem;
+    transform: translateY(-50%);
   }
   
   .language-option {

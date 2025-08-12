@@ -76,7 +76,7 @@ onUnmounted(() => {
         v-for="item in navigationItems"
         :key="item.id"
         @click="scrollToSection(item.href)"
-        class="uppercase relative text-sm font-medium transition-all duration-200 group"
+        class="uppercase relative text-sm font-medium transition-all duration-200 group text-left"
         :class="[activeSection === item.id ? 'text-amber-400' : 'text-white/60 hover:text-white']"
       >
         <span class="relative z-10">{{ item.label }}</span>
@@ -88,24 +88,20 @@ onUnmounted(() => {
         ></div>
 
         <!-- Hover effect - shooting star -->
-        <div
-          class="absolute -left-2 top-1/2 -translate-y-1/2 shooting-star-nav"
-        ></div>
+        <div class="absolute -left-2 top-1/2 -translate-y-1/2 shooting-star-nav"></div>
       </button>
     </div>
 
     <!-- Floating stars decoration -->
-    <div
-      class="absolute -top-6 left-2 w-1 h-1 bg-white rounded-full animate-pulse opacity-40"
-    ></div>
-    <div
-      class="absolute -bottom-6 left-4 w-1 h-1 bg-amber-400 rounded-full animate-pulse opacity-30"
-      style="animation-delay: 1.5s"
-    ></div>
-    <div
-      class="absolute top-1/3 -right-4 w-1 h-1 bg-white rounded-full animate-pulse opacity-20"
-      style="animation-delay: 0.8s"
-    ></div>
+    <div class="absolute -top-6 left-2 w-4 h-4 opacity-40">
+      <img src="@/assets/star.svg" alt="" class="w-full h-full animate-pulse star-white" />
+    </div>
+    <div class="absolute -bottom-6 left-4 w-4 h-4 opacity-30" style="animation-delay: 1.5s">
+      <img src="@/assets/star.svg" alt="" class="w-full h-full animate-pulse star-amber" />
+    </div>
+    <div class="absolute top-1/3 -right-4 w-4 h-4 opacity-20" style="animation-delay: 0.8s">
+      <img src="@/assets/star.svg" alt="" class="w-full h-full animate-pulse star-white" />
+    </div>
   </nav>
 </template>
 
@@ -169,5 +165,15 @@ onUnmounted(() => {
     width: 40px;
     opacity: 0;
   }
+}
+
+.star-white {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg)
+    brightness(100%) contrast(100%);
+}
+
+.star-amber {
+  filter: brightness(0) saturate(100%) invert(63%) sepia(78%) saturate(463%) hue-rotate(360deg)
+    brightness(102%) contrast(100%);
 }
 </style>

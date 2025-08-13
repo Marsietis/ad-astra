@@ -316,7 +316,6 @@ body {
 
 #app {
   position: relative;
-  z-index: 1;
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;

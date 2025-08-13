@@ -1,9 +1,50 @@
 <script setup lang="ts">
 import { useTranslations } from '@/composables/useTranslations'
 import { useScrollAnimation } from '@/composables/useScrollAnimation'
+import { onMounted, onUnmounted } from 'vue'
 
 const { t } = useTranslations()
 const { sectionRef, isVisible } = useScrollAnimation()
+
+let scrollTimeout: number | null = null
+
+const handleWheel = (event: WheelEvent) => {
+  // Only handle scroll up events
+  if (event.deltaY < 0) {
+    event.preventDefault()
+
+    // Clear any existing timeout
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout)
+    }
+
+    // Add a small delay to prevent too rapid scrolling
+    scrollTimeout = setTimeout(() => {
+      const heroSection = document.getElementById('hero')
+      if (heroSection) {
+        heroSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      }
+    }, 100)
+  }
+}
+
+onMounted(() => {
+  if (sectionRef.value) {
+    sectionRef.value.addEventListener('wheel', handleWheel, { passive: false })
+  }
+})
+
+onUnmounted(() => {
+  if (sectionRef.value) {
+    sectionRef.value.removeEventListener('wheel', handleWheel)
+  }
+  if (scrollTimeout) {
+    clearTimeout(scrollTimeout)
+  }
+})
 </script>
 
 <template>
@@ -15,7 +56,9 @@ const { sectionRef, isVisible } = useScrollAnimation()
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="text-center">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-8 sm:mb-12 lg:mb-16">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-8 sm:mb-12 lg:mb-16"
+        >
           {{ t.eventInfoTitle }}
         </h2>
 
@@ -24,7 +67,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
           <!-- Date -->
           <div class="text-center">
             <svg
-              class="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-amber-400 mx-auto mb-4 sm:mb-6"
+              class="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-primary mx-auto mb-4 sm:mb-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -37,7 +80,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
               />
             </svg>
             <div
-              class="text-sm sm:text-base lg:text-lg font-medium text-amber-400 uppercase tracking-wider mb-3 sm:mb-4"
+              class="text-sm sm:text-base lg:text-lg font-medium text-primary uppercase tracking-wider mb-3 sm:mb-4"
             >
               {{ t.dateLabel }}
             </div>
@@ -49,7 +92,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
           <!-- Time -->
           <div class="text-center">
             <svg
-              class="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-amber-400 mx-auto mb-4 sm:mb-6"
+              class="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-primary mx-auto mb-4 sm:mb-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -62,7 +105,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
               />
             </svg>
             <div
-              class="text-sm sm:text-base lg:text-lg font-medium text-amber-400 uppercase tracking-wider mb-3 sm:mb-4"
+              class="text-sm sm:text-base lg:text-lg font-medium text-primary uppercase tracking-wider mb-3 sm:mb-4"
             >
               {{ t.timeLabel }}
             </div>
@@ -74,7 +117,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
           <!-- Location -->
           <div class="text-center flex flex-col items-center">
             <svg
-              class="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-amber-400 mx-auto mb-4 sm:mb-6"
+              class="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-primary mx-auto mb-4 sm:mb-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -93,11 +136,13 @@ const { sectionRef, isVisible } = useScrollAnimation()
               />
             </svg>
             <div
-              class="text-sm sm:text-base lg:text-lg font-medium text-amber-400 uppercase tracking-wider mb-3 sm:mb-4"
+              class="text-sm sm:text-base lg:text-lg font-medium text-primary uppercase tracking-wider mb-3 sm:mb-4"
             >
               {{ t.locationLabel }}
             </div>
-            <div class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2 sm:mb-3 text-center">
+            <div
+              class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2 sm:mb-3 text-center"
+            >
               {{ t.eventLocation }}
             </div>
             <div class="text-base sm:text-lg lg:text-xl text-gray-300 px-2">
@@ -107,7 +152,9 @@ const { sectionRef, isVisible } = useScrollAnimation()
         </div>
 
         <!-- More info message -->
-        <div class="text-sm sm:text-base lg:text-lg text-gray-400 text-center mt-6 sm:mt-8 lg:mt-12 italic font-light px-4">
+        <div
+          class="text-sm sm:text-base lg:text-lg text-gray-400 text-center mt-6 sm:mt-8 lg:mt-12 italic font-light px-4"
+        >
           {{ t.moreInfoSoon }}
         </div>
       </div>

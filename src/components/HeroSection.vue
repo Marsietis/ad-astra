@@ -2,37 +2,80 @@
 import logoUrl from '/src/assets/logo.png'
 import { useTranslations } from '@/composables/useTranslations'
 import { useScrollHint } from '@/composables/useScrollHint'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const { t } = useTranslations()
 const { showHint } = useScrollHint()
+
+const heroRef = ref<HTMLElement>()
+let scrollTimeout: number | null = null
+
+const handleWheel = (event: WheelEvent) => {
+  // Only handle scroll down events
+  if (event.deltaY > 0) {
+    event.preventDefault()
+
+    // Clear any existing timeout
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout)
+    }
+
+    // Add a small delay to prevent too rapid scrolling
+    scrollTimeout = setTimeout(() => {
+      const eventInfoSection = document.getElementById('event-info')
+      if (eventInfoSection) {
+        eventInfoSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      }
+    }, 100)
+  }
+}
+
+onMounted(() => {
+  if (heroRef.value) {
+    heroRef.value.addEventListener('wheel', handleWheel, { passive: false })
+  }
+})
+
+onUnmounted(() => {
+  if (heroRef.value) {
+    heroRef.value.removeEventListener('wheel', handleWheel)
+  }
+  if (scrollTimeout) {
+    clearTimeout(scrollTimeout)
+  }
+})
 </script>
 
 <template>
   <main
     id="hero"
+    ref="heroRef"
     class="min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-8 relative pt-20 sm:pt-24 lg:pt-0 lg:items-center"
   >
     <div
-      class="flex items-center justify-center lg:justify-between w-full max-w-7xl mx-auto gap-8 lg:gap-16 flex-col lg:flex-row text-center lg:text-left"
+      class="flex items-center justify-start w-full max-w-screen-2xl mx-auto text-left relative z-10"
     >
-      <div class="flex-1 max-w-3xl">
+      <div class="max-w-4xl">
         <h1
-          class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-amber-400 mb-4 lg:mb-6 leading-none tracking-tight"
+          class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary mb-4 lg:mb-6 leading-none tracking-tight"
         >
           AD ASTRA
         </h1>
         <div
-          class="text-3xl sm:text-4xl lg:text-6xl xl:text-6xl font-extrabold text-white mb-4 lg:mb-6 leading-tight tracking-tight"
+          class="text-3xl sm:text-4xl lg:text-6xl xl:text-6xl font-bold text-white mb-4 lg:mb-6 leading-tight tracking-tight"
         >
           {{ t.subtitle }}
         </div>
         <div
-          class="text-lg sm:text-xl lg:text-3xl font-light text-white mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+          class="text-lg sm:text-xl lg:text-3xl font-normal text-white mb-6 lg:mb-8 leading-relaxed max-w-3xl"
         >
           {{ t.description }}
         </div>
         <div
-          class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-amber-400 mb-6 lg:mb-8 leading-none tracking-tight drop-shadow-lg"
+          class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary mb-6 lg:mb-8 leading-none tracking-tight drop-shadow-lg"
         >
           09.05
         </div>
@@ -44,31 +87,16 @@ const { showHint } = useScrollHint()
           class="inline-flex items-center justify-center bg-gradient-to-r from-amber-400 to-amber-500 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-amber-400/25 hover:from-amber-300 hover:to-amber-400 transform hover:scale-105 transition-all duration-300 group"
         >
           {{ t.registrationTitle }}
-          <svg
-            class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            ></path>
-          </svg>
         </a>
       </div>
-      <div
-        class="flex-1 flex justify-center items-center max-w-sm lg:max-w-lg order-first lg:order-last"
-      >
-        <img
-          :src="logoUrl"
-          alt="Ad Astra Logo"
-          class="w-full max-w-xs sm:max-w-sm lg:max-w-md h-auto drop-shadow-xl object-contain"
-        />
-      </div>
     </div>
+
+    <!-- Large logo positioned at bottom right -->
+    <img
+      :src="logoUrl"
+      alt="Ad Astra Logo"
+      class="absolute bottom-0 right-0 w-[32rem] sm:w-[36rem] md:w-[42rem] lg:w-[48rem] xl:w-[56rem] 2xl:w-[64rem] h-auto drop-shadow-2xl object-contain z-0"
+    />
     <div
       class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-opacity duration-300"
       :class="{ 'opacity-0 pointer-events-none': showHint }"
@@ -79,6 +107,24 @@ const { showHint } = useScrollHint()
 </template>
 
 <style scoped>
+#hero {
+  position: relative;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/src/assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
 @keyframes bounce {
   0%,
   20%,

@@ -146,6 +146,24 @@ export function useBackgroundAnimations() {
       shootingStarIntervalId = null
     }
 
+    // Create a container for shooting stars to prevent viewport overflow
+    let shootingStarContainer = document.querySelector('.shooting-star-container') as HTMLElement
+    if (!shootingStarContainer) {
+      shootingStarContainer = document.createElement('div')
+      shootingStarContainer.classList.add('shooting-star-container')
+      shootingStarContainer.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+      `
+      document.body.appendChild(shootingStarContainer)
+    }
+
     const createShootingStar = () => {
       const shootingStar = document.createElement('div')
       shootingStar.classList.add('shooting-star')
@@ -154,45 +172,50 @@ export function useBackgroundAnimations() {
       const direction = Math.floor(Math.random() * 4)
       let startX, startY, deltaX, deltaY, rotation
 
+      // Use viewport units and ensure positions stay within container bounds
+      const isMobile = initialViewportWidth <= 768
+      const travelDistance = isMobile ? 150 : 300
+
       switch (direction) {
-        case 0: // Left to right
-          startX = Math.random() * -100 - 50
-          startY = Math.random() * initialViewportHeight
-          deltaX = 200 + Math.random() * 400
-          deltaY = (Math.random() - 0.5) * 200
+        case 0: // Left to right - start from left edge, travel right
+          startX = -10 // Start just outside left edge (in vw)
+          startY = Math.random() * 100 // Random Y position in viewport
+          deltaX = travelDistance
+          deltaY = (Math.random() - 0.5) * 100
           rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
           break
-        case 1: // Right to left
-          startX = initialViewportWidth + Math.random() * 100 + 50
-          startY = Math.random() * initialViewportHeight
-          deltaX = -(200 + Math.random() * 400)
-          deltaY = (Math.random() - 0.5) * 200
+        case 1: // Right to left - start from right edge, travel left
+          startX = 110 // Start just outside right edge (in vw)
+          startY = Math.random() * 100 // Random Y position in viewport
+          deltaX = -travelDistance
+          deltaY = (Math.random() - 0.5) * 100
           rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
           break
-        case 2: // Top to bottom
-          startX = Math.random() * initialViewportWidth
-          startY = Math.random() * -100 - 50
-          deltaX = (Math.random() - 0.5) * 200
-          deltaY = 200 + Math.random() * 400
+        case 2: // Top to bottom - start from top edge, travel down
+          startX = Math.random() * 100 // Random X position in viewport
+          startY = -10 // Start just outside top edge (in vh)
+          deltaX = (Math.random() - 0.5) * 100
+          deltaY = travelDistance
           rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
           break
-        case 3: // Bottom to top
-          startX = Math.random() * initialViewportWidth
-          startY = initialViewportHeight + Math.random() * 100 + 50
-          deltaX = (Math.random() - 0.5) * 200
-          deltaY = -(200 + Math.random() * 400)
+        case 3: // Bottom to top - start from bottom edge, travel up
+          startX = Math.random() * 100 // Random X position in viewport
+          startY = 110 // Start just outside bottom edge (in vh)
+          deltaX = (Math.random() - 0.5) * 100
+          deltaY = -travelDistance
           rotation = Math.atan2(deltaY, deltaX) * (180 / Math.PI)
           break
       }
 
-      shootingStar.style.left = startX + 'px'
-      shootingStar.style.top = startY + 'px'
+      // Position the shooting star - the container's overflow:hidden will clip anything outside
+      shootingStar.style.left = startX + 'vw'
+      shootingStar.style.top = startY + 'vh'
 
       shootingStar.style.setProperty('--delta-x', deltaX + 'px')
       shootingStar.style.setProperty('--delta-y', deltaY + 'px')
       shootingStar.style.setProperty('--rotation', rotation + 'deg')
 
-      document.body.appendChild(shootingStar)
+      shootingStarContainer.appendChild(shootingStar)
 
       // Remove the shooting star after animation
       setTimeout(() => {

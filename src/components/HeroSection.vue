@@ -53,7 +53,7 @@ onUnmounted(() => {
   <main
     id="hero"
     ref="heroRef"
-    class="min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-8 relative pt-24 sm:pt-28 lg:pt-0 lg:items-center"
+    class="min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-8 relative pt-28 sm:pt-32 md:pt-24 lg:pt-0 lg:items-center"
   >
     <div
       class="flex items-center justify-start w-full max-w-screen-2xl mx-auto text-left relative z-10"

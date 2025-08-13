@@ -12,12 +12,12 @@ const { currentLanguage, toggleLanguage } = useTranslations()
       :aria-label="currentLanguage === 'lt' ? 'Switch to English' : 'Perjungti į lietuvių kalbą'"
     >
       <div class="language-option" :class="{ active: currentLanguage === 'lt' }">
-        <span class="language-flag">🇱🇹</span>
+        <img src="@/assets/lt.svg" alt="LT" class="language-flag" />
         <span class="language-code">LT</span>
       </div>
       <div class="language-divider"></div>
       <div class="language-option" :class="{ active: currentLanguage === 'en' }">
-        <span class="language-flag">🇬🇧</span>
+        <img src="@/assets/uk.svg" alt="GB" class="language-flag" />
         <span class="language-code">EN</span>
       </div>
     </button>
@@ -91,9 +91,10 @@ const { currentLanguage, toggleLanguage } = useTranslations()
 }
 
 .language-flag {
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .language-code {
@@ -115,7 +116,8 @@ const { currentLanguage, toggleLanguage } = useTranslations()
   }
   
   .language-flag {
-    font-size: 0.875rem;
+    width: 14px;
+    height: 14px;
   }
   
   .language-code {

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import logoUrl from '/src/assets/logo.png'
+import mobileLogoUrl from '/src/assets/mobile-logo.png'
 import { useTranslations } from '@/composables/useTranslations'
 import { useScrollHint } from '@/composables/useScrollHint'
 import { ref, onMounted, onUnmounted } from 'vue'
@@ -53,8 +54,17 @@ onUnmounted(() => {
   <main
     id="hero"
     ref="heroRef"
-    class="min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-8 relative pt-28 sm:pt-32 md:pt-24 lg:pt-0 lg:items-center"
+    class="min-h-screen flex flex-col md:flex-row md:items-center justify-start md:justify-center px-4 sm:px-6 lg:px-8 relative pt-2 md:pt-24 lg:pt-0"
   >
+    <!-- Mobile logo at top (only visible on mobile) -->
+    <div class="flex justify-center w-full md:hidden mb-4">
+      <img
+        :src="mobileLogoUrl"
+        alt="Ad Astra Logo"
+        class="w-80 h-auto drop-shadow-lg object-contain"
+      />
+    </div>
+
     <div
       class="flex items-center justify-start w-full max-w-screen-2xl mx-auto text-left relative z-10"
     >
@@ -91,11 +101,11 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <!-- Large logo positioned at bottom right -->
+    <!-- Large logo positioned at bottom right (hidden on mobile) -->
     <img
       :src="logoUrl"
       alt="Ad Astra Logo"
-      class="absolute bottom-0 right-0 w-[32rem] sm:w-[36rem] md:w-[40rem] lg:w-[44rem] xl:w-[48rem] 2xl:w-[64rem] h-auto drop-shadow-2xl object-contain z-0 opacity-80 sm:opacity-85 md:opacity-90 lg:opacity-95 xl:opacity-100"
+      class="hidden md:block absolute bottom-0 right-0 w-[32rem] sm:w-[36rem] md:w-[40rem] lg:w-[44rem] xl:w-[48rem] 2xl:w-[64rem] h-auto drop-shadow-2xl object-contain z-0 opacity-80 sm:opacity-85 md:opacity-90 lg:opacity-95 xl:opacity-100"
     />
     <div
       class="scroll-indicator absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 transition-opacity duration-300"

@@ -58,24 +58,24 @@ onUnmounted(() => {
     <div
       class="flex items-center justify-start w-full max-w-screen-2xl mx-auto text-left relative z-10"
     >
-      <div class="w-full max-w-none">
+      <div class="w-full max-w-none pr-8 sm:pr-16 md:pr-32 lg:pr-40 xl:pr-48 2xl:pr-56">
         <h1
-          class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-walsheim text-primary mb-4 sm:mb-6 lg:mb-8 leading-none tracking-tight"
+          class="text-6xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-walsheim text-primary mb-4 sm:mb-6 lg:mb-8 leading-none tracking-tight"
         >
           AD ASTRA
         </h1>
         <div
-          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-walsheim text-white mb-4 sm:mb-6 lg:mb-8 leading-tight tracking-tight"
+          class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-4 sm:mb-6 lg:mb-8 leading-tight tracking-tight"
         >
           {{ t.subtitle }}
         </div>
         <div
-          class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal text-white mb-6 sm:mb-8 lg:mb-10 leading-relaxed max-w-4xl"
+          class="text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal text-white mb-6 sm:mb-8 lg:mb-10 leading-relaxed max-w-4xl"
         >
           {{ t.description }}
         </div>
         <div
-          class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-walsheim text-primary mb-6 sm:mb-8 lg:mb-10 leading-none tracking-tight drop-shadow-lg"
+          class="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-walsheim text-primary mb-6 sm:mb-8 lg:mb-10 leading-none tracking-tight drop-shadow-lg"
         >
           09.05
         </div>
@@ -84,7 +84,7 @@ onUnmounted(() => {
           :href="t.registrationUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center bg-gradient-to-r from-amber-400 to-amber-500 text-black px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-xl font-semibold text-base sm:text-lg md:text-xl shadow-lg hover:shadow-amber-400/25 hover:from-amber-300 hover:to-amber-400 transform hover:scale-105 transition-all duration-300 group"
+          class="inline-flex items-center justify-center bg-gradient-to-r from-amber-400 to-amber-500 text-black px-6 sm:px-6 md:px-8 py-4 sm:py-4 rounded-xl font-semibold text-base sm:text-base md:text-lg shadow-lg hover:shadow-amber-400/25 hover:from-amber-300 hover:to-amber-400 transform hover:scale-105 transition-all duration-300 group"
         >
           {{ t.registrationTitle }}
         </a>
@@ -95,7 +95,7 @@ onUnmounted(() => {
     <img
       :src="logoUrl"
       alt="Ad Astra Logo"
-      class="absolute bottom-0 right-0 w-[40rem] sm:w-[44rem] md:w-[48rem] lg:w-[52rem] xl:w-[56rem] 2xl:w-[64rem] h-auto drop-shadow-2xl object-contain z-0 opacity-80 sm:opacity-85 md:opacity-90 lg:opacity-95 xl:opacity-100"
+      class="absolute bottom-0 right-0 w-[32rem] sm:w-[36rem] md:w-[40rem] lg:w-[44rem] xl:w-[48rem] 2xl:w-[64rem] h-auto drop-shadow-2xl object-contain z-0 opacity-80 sm:opacity-85 md:opacity-90 lg:opacity-95 xl:opacity-100"
     />
     <div
       class="scroll-indicator absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 transition-opacity duration-300"

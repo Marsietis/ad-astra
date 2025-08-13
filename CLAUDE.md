@@ -86,7 +86,7 @@ The application is currently a single-page promotional site with:
 - **Responsive design** should use Tailwind's responsive prefixes (sm:, md:, lg:, xl:, 2xl:)
 
 ### Typography Classes to Use
-- **Headings**: `text-4xl lg:text-5xl xl:text-6xl font-bold` (responsive sizing)
+- **Headings**: `text-4xl lg:text-5xl xl:text-6xl font-walsheim` (responsive sizing using GT Walsheim Pro font)
 - **Body text**: `text-lg lg:text-xl` for main content
 - **Secondary text**: `text-base lg:text-lg` for descriptions
 - **Colors**: `text-white`, `text-amber-400`, `text-gray-200`, `text-gray-400`

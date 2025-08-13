@@ -1,5 +1,23 @@
 @import 'tailwindcss';
 
+/* GT Walsheim Pro Font */
+@font-face {
+  font-family: 'GT Walsheim Pro';
+  src:
+    url('/GT-Walsheim-Pro-Medium.ttf') format('truetype'),
+    url('./wetransfer_gt-walsheim-pro-ultra-bold-ttf_2025-08-13_1954/GT-Walsheim-Pro-Medium.ttf')
+      format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom font class */
+.font-walsheim {
+  font-family: 'GT Walsheim Pro', sans-serif;
+  font-weight: 900;
+}
+
 /* Custom gradient for accent shapes */
 .bg-gradient-radial {
   background: radial-gradient(circle, var(--tw-gradient-stops));

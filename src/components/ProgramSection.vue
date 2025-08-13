@@ -92,7 +92,7 @@ onUnmounted(() => {
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 lg:mb-8">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-walsheim text-white mb-6 lg:mb-8">
           {{ t.programTitle }}
         </h2>
         <div

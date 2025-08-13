@@ -57,7 +57,7 @@ onUnmounted(() => {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="text-center">
         <h2
-          class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-8 sm:mb-12 lg:mb-16"
+          class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-8 sm:mb-12 lg:mb-16"
         >
           {{ t.eventInfoTitle }}
         </h2>
@@ -84,7 +84,7 @@ onUnmounted(() => {
             >
               {{ t.dateLabel }}
             </div>
-            <div class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
+            <div class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-walsheim text-white">
               {{ t.eventDate }}
             </div>
           </div>
@@ -109,7 +109,7 @@ onUnmounted(() => {
             >
               {{ t.timeLabel }}
             </div>
-            <div class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
+            <div class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-walsheim text-white">
               {{ t.eventTime }}
             </div>
           </div>
@@ -141,7 +141,7 @@ onUnmounted(() => {
               {{ t.locationLabel }}
             </div>
             <div
-              class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2 sm:mb-3 text-center"
+              class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-walsheim text-white mb-2 sm:mb-3 text-center"
             >
               {{ t.eventLocation }}
             </div>

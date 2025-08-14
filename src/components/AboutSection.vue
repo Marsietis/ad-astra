@@ -16,20 +16,30 @@ const { sectionRef, isVisible } = useScrollAnimation()
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pl-40 xl:pl-36">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[60vh]">
         <div class="relative z-10 text-center lg:text-left">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-walsheim text-white mb-6 lg:mb-8">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-walsheim text-white mb-6 lg:mb-8 uppercase"
+          >
             {{ t.whatIsAdAstra }}
           </h2>
-          <div class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0">
+          <div
+            class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0"
+          >
             {{ t.aboutText1 }}
           </div>
-          <div class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0">
+          <div
+            class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0"
+          >
             {{ t.aboutText2 }}
           </div>
-          <div class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0">
+          <div
+            class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0"
+          >
             {{ t.aboutText3 }}
           </div>
         </div>
-        <div class="relative h-64 sm:h-80 lg:h-[400px] flex items-center justify-center order-first lg:order-last hidden md:block">
+        <div
+          class="relative h-64 sm:h-80 lg:h-[400px] flex items-center justify-center order-first lg:order-last hidden md:block"
+        >
           <div
             class="absolute w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-full top-1/4 right-1/6 lg:top-1/5 lg:right-1/10 animate-pulse -z-10 accent-glow"
           ></div>

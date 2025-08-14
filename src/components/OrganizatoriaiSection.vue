@@ -14,7 +14,9 @@ const { sectionRef, isVisible } = useScrollAnimation()
     :class="{ 'opacity-100 translate-y-0': isVisible }"
   >
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-walsheim text-white mb-6 lg:mb-8 text-center">
+      <h2
+        class="text-3xl sm:text-4xl lg:text-5xl font-walsheim text-white mb-6 lg:mb-8 text-center uppercase"
+      >
         {{ t.organizatoriaiTitle }}
       </h2>
 

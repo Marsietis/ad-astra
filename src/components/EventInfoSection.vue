@@ -57,7 +57,7 @@ onUnmounted(() => {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="text-center">
         <h2
-          class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-8 sm:mb-12 lg:mb-16"
+          class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-8 sm:mb-12 lg:mb-16 uppercase"
         >
           {{ t.eventInfoTitle }}
         </h2>

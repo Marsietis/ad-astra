@@ -17,23 +17,23 @@ const programItems = computed(() => [
   {
     title: t.value.scientificZone,
     description: t.value.scientificZoneDesc,
-    image: scienceImg
+    image: scienceImg,
   },
   {
     title: t.value.contactFair,
     description: t.value.contactFairDesc,
-    image: contactsImg
+    image: contactsImg,
   },
   {
     title: t.value.discussionZone,
     description: t.value.discussionZoneDesc,
-    image: discussionsImg
+    image: discussionsImg,
   },
   {
     title: t.value.concertPart,
     description: t.value.concertPartDesc,
-    image: concertImg
-  }
+    image: concertImg,
+  },
 ])
 
 const totalSlides = computed(() => programItems.value.length)
@@ -90,9 +90,9 @@ onUnmounted(() => {
     class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out"
     :class="{ 'opacity-100 translate-y-0': isVisible }"
   >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pl-40 xl:pl-36 w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-walsheim text-white mb-6 lg:mb-8">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 lg:mb-8 uppercase">
           {{ t.programTitle }}
         </h2>
         <div
@@ -106,22 +106,19 @@ onUnmounted(() => {
       <div class="relative mt-12 max-w-6xl mx-auto">
         <!-- Carousel Slides -->
         <div class="overflow-hidden">
-          <div 
-            class="flex"
-            :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
-          >
+          <div class="flex" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
             <div
               v-for="(item, index) in programItems"
               :key="index"
               class="w-full flex-shrink-0 px-4"
             >
-              <div 
+              <div
                 class="rounded p-8 h-64 flex flex-col justify-center text-center bg-cover bg-center relative"
                 :style="{ backgroundImage: `url(${item.image})` }"
               >
                 <div class="absolute inset-0 bg-black/60 rounded"></div>
                 <div class="relative z-10">
-                  <h3 class="text-2xl sm:text-3xl font-semibold text-amber-400 mb-6">
+                  <h3 class="text-2xl sm:text-3xl font-semibold text-primary mb-6">
                     {{ item.title }}
                   </h3>
                   <p class="text-lg sm:text-xl text-white leading-relaxed">
@@ -139,7 +136,12 @@ onUnmounted(() => {
           class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-black/60 hover:bg-black/80 rounded-full p-3"
         >
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
 
@@ -148,7 +150,12 @@ onUnmounted(() => {
           class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-black/60 hover:bg-black/80 rounded-full p-3"
         >
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </button>
 
@@ -159,7 +166,7 @@ onUnmounted(() => {
             :key="index"
             @click="goToSlide(index)"
             class="w-3 h-3 rounded-full"
-            :class="index === currentSlide ? 'bg-amber-400' : 'bg-white/40'"
+            :class="index === currentSlide ? 'bg-primary' : 'bg-white/40'"
           />
         </div>
       </div>

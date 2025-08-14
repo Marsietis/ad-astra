@@ -1,21 +1,33 @@
 @import 'tailwindcss';
 
-/* GT Walsheim Pro Font */
+/* GT Walsheim Bold Font for Hero */
+@font-face {
+  font-family: 'GT Walsheim Bold';
+  src: url('/GT-Walsheim-Bold-Trial.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* GT Walsheim Pro Medium Font */
 @font-face {
   font-family: 'GT Walsheim Pro';
-  src:
-    url('/GT-Walsheim-Pro-Medium.ttf') format('truetype'),
-    url('./wetransfer_gt-walsheim-pro-ultra-bold-ttf_2025-08-13_1954/GT-Walsheim-Pro-Medium.ttf')
-      format('truetype');
+  src: url('/GT-Walsheim-Pro-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
-/* Custom font class */
+/* Hero section font class */
+.font-walsheim-hero {
+  font-family: 'GT Walsheim Bold', sans-serif;
+  font-weight: bold;
+}
+
+/* General font class */
 .font-walsheim {
   font-family: 'GT Walsheim Pro', sans-serif;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 /* Custom gradient for accent shapes */

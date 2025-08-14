@@ -70,12 +70,12 @@ onUnmounted(() => {
     >
       <div class="w-full max-w-none pr-8 sm:pr-16 md:pr-32 lg:pr-40 xl:pr-48 2xl:pr-56">
         <h1
-          class="text-6xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-walsheim text-primary mb-4 sm:mb-6 lg:mb-8 leading-none tracking-tight"
+          class="text-6xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-walsheim-hero text-primary mb-4 sm:mb-6 lg:mb-8 leading-none tracking-tight"
         >
           AD ASTRA
         </h1>
         <div
-          class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-4 sm:mb-6 lg:mb-8 leading-tight tracking-tight"
+          class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-walsheim-hero text-white mb-4 sm:mb-6 lg:mb-8 leading-tight tracking-tight"
         >
           {{ t.subtitle }}
         </div>
@@ -85,7 +85,7 @@ onUnmounted(() => {
           {{ t.description }}
         </div>
         <div
-          class="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-walsheim text-primary mb-6 sm:mb-8 lg:mb-10 leading-none tracking-tight drop-shadow-lg"
+          class="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-walsheim-hero text-primary mb-6 sm:mb-8 lg:mb-10 leading-none tracking-tight drop-shadow-lg"
         >
           09.05
         </div>

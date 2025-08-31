@@ -15,7 +15,7 @@ const navigationItems = computed(() => [
   { id: 'program', label: t.value.navProgram, href: '#program' },
   { id: 'news', label: t.value.navNews, href: '#news' },
   { id: 'organizatoriai', label: t.value.navOrganizers, href: '#organizatoriai' },
-  { id: 'partners', label: t.value.navPartners, href: '#partners' },
+  // { id: 'partners', label: t.value.navPartners, href: '#partners' },
 ])
 
 const handleScroll = () => {

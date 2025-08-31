@@ -41,8 +41,8 @@ let currentSection = 0
 
 const sections = [
   'hero',
-  'about', 
   'event-info',
+  'about',
   'why-ad-astra',
   'program',
   'news',

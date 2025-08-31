@@ -8,7 +8,7 @@ import EventInfoSection from '@/components/EventInfoSection.vue'
 import WhyAdAstraSection from '@/components/WhyAdAstraSection.vue'
 import ProgramSection from '@/components/ProgramSection.vue'
 import NewsSection from '@/components/NewsSection.vue'
-import PartnersSection from '@/components/PartnersSection.vue'
+// import PartnersSection from '@/components/PartnersSection.vue'
 import OrganizatoriaiSection from '@/components/OrganizatoriaiSection.vue'
 import FooterSection from '@/components/FooterSection.vue'
 import ScrollHint from '@/components/ScrollHint.vue'
@@ -34,7 +34,7 @@ useBackgroundAnimations()
     <ProgramSection />
     <NewsSection />
     <OrganizatoriaiSection />
-    <PartnersSection />
+    <!-- <PartnersSection /> -->
 
     <FooterSection />
 
@@ -402,7 +402,7 @@ body {
   .stars {
     animation: stellar-rotation 420s linear infinite;
   }
-  
+
   .star-svg {
     width: 16px;
     height: 16px;
@@ -450,26 +450,26 @@ body {
   .stars {
     animation: none;
   }
-  
+
   .star {
     animation: none;
     opacity: 0.6;
   }
-  
+
   .star-svg {
     animation: none;
     opacity: 0.8;
   }
-  
+
   .star-5point {
     animation: none;
     opacity: 0.7;
   }
-  
+
   .shooting-star {
     display: none;
   }
-  
+
   .floating-accent {
     animation: none;
     opacity: 0.1;

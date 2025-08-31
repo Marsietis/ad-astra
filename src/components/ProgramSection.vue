@@ -92,14 +92,9 @@ onUnmounted(() => {
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 lg:mb-8 uppercase">
+        <h2 class="text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-6 lg:mb-8 uppercase">
           {{ t.programTitle }}
         </h2>
-        <div
-          class="text-base sm:text-lg lg:text-xl font-light text-white mb-8 lg:mb-12 max-w-3xl mx-auto lg:mx-0"
-        >
-          {{ t.programDescription }}
-        </div>
       </div>
 
       <!-- Carousel Container -->
@@ -113,17 +108,14 @@ onUnmounted(() => {
               class="w-full flex-shrink-0 px-4"
             >
               <div
-                class="rounded p-8 h-64 flex flex-col justify-center text-center bg-cover bg-center relative"
+                class="rounded p-8 h-80 flex flex-col justify-center text-center bg-cover bg-center relative"
                 :style="{ backgroundImage: `url(${item.image})` }"
               >
                 <div class="absolute inset-0 bg-black/60 rounded"></div>
                 <div class="relative z-10">
-                  <h3 class="text-2xl sm:text-3xl font-semibold text-primary mb-6">
+                  <h3 class="text-3xl sm:text-4xl lg:text-6xl font-walsheim text-primary mb-6 uppercase">
                     {{ item.title }}
                   </h3>
-                  <p class="text-lg sm:text-xl text-white leading-relaxed">
-                    {{ item.description }}
-                  </p>
                 </div>
               </div>
             </div>
@@ -173,7 +165,3 @@ onUnmounted(() => {
     </div>
   </section>
 </template>
-
-<style scoped>
-/* Carousel styles are handled by Tailwind classes */
-</style>

@@ -14,7 +14,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
     :class="{ 'opacity-100 translate-y-0': isVisible }"
   >
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-      <h2 class="text-4xl lg:text-5xl font-walsheim text-white mb-8 text-center uppercase">
+      <h2 class="text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-8 text-center uppercase">
         {{ t.partnersTitle }}
       </h2>
       <img

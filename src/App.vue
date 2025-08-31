@@ -6,7 +6,7 @@ import HeroSection from '@/components/HeroSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
 import EventInfoSection from '@/components/EventInfoSection.vue'
 import WhyAdAstraSection from '@/components/WhyAdAstraSection.vue'
-import ProgramSection from '@/components/ProgramSection.vue'
+import DetailedProgramSection from '@/components/DetailedProgramSection.vue'
 import NewsSection from '@/components/NewsSection.vue'
 // import PartnersSection from '@/components/PartnersSection.vue'
 import OrganizatoriaiSection from '@/components/OrganizatoriaiSection.vue'
@@ -24,6 +24,7 @@ useBackgroundAnimations()
     <LanguageToggle />
     <HeroSection />
     <EventInfoSection />
+    <DetailedProgramSection />
 
     <AboutSection />
 
@@ -31,7 +32,6 @@ useBackgroundAnimations()
     <div class="floating-accent accent-1"></div>
 
     <WhyAdAstraSection />
-    <ProgramSection />
     <NewsSection />
     <OrganizatoriaiSection />
     <!-- <PartnersSection /> -->

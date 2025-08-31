@@ -57,7 +57,7 @@ onUnmounted(() => {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="text-center">
         <h2
-          class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-8 sm:mb-12 lg:mb-16 uppercase"
+          class="text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-8 sm:mb-12 lg:mb-16 uppercase"
         >
           {{ t.eventInfoTitle }}
         </h2>
@@ -149,13 +149,6 @@ onUnmounted(() => {
               {{ t.eventAddress }}
             </div>
           </div>
-        </div>
-
-        <!-- More info message -->
-        <div
-          class="text-sm sm:text-base lg:text-lg text-gray-400 text-center mt-6 sm:mt-8 lg:mt-12 italic font-light px-4"
-        >
-          {{ t.moreInfoSoon }}
         </div>
       </div>
     </div>

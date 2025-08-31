@@ -15,7 +15,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
           <div class="absolute w-20 h-20 sm:w-24 sm:h-24 lg:w-36 lg:h-36 rounded-full top-3/5 left-1/3 lg:left-1/4 animate-pulse -z-10 accent-glow-secondary"></div>
         </div>
         <div class="relative z-10 text-center lg:text-right">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-walsheim text-white mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0 lg:ml-auto">
+          <h2 class="text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0 lg:ml-auto">
             {{ t.whyAdAstraTitle }} ✨
           </h2>
           <div class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0 lg:ml-auto">

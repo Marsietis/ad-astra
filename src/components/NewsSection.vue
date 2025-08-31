@@ -16,7 +16,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="text-center">
         <div class="content-header mb-12">
-          <h2 class="text-4xl lg:text-5xl font-walsheim text-white mb-6 uppercase">
+          <h2 class="text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-6 uppercase">
             {{ t.newsTitle }}
           </h2>
           <div class="text-lg lg:text-xl font-light text-white mb-8">

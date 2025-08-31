@@ -42,9 +42,9 @@ let currentSection = 0
 const sections = [
   'hero',
   'event-info',
+  'detailed-program',
   'about',
   'why-ad-astra',
-  'program',
   'news',
   'organizatoriai',
   'partners'

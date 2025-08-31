@@ -17,7 +17,7 @@ const { sectionRef, isVisible } = useScrollAnimation()
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[60vh]">
         <div class="relative z-10 text-center lg:text-left">
           <h2
-            class="text-3xl sm:text-4xl lg:text-5xl font-walsheim text-white mb-6 lg:mb-8 uppercase"
+            class="text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-6 lg:mb-8 uppercase"
           >
             {{ t.whatIsAdAstra }}
           </h2>

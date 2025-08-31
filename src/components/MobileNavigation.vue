@@ -10,12 +10,12 @@ const activeSection = ref('hero')
 const navigationItems = computed(() => [
   { id: 'hero', label: t.value.navHome, href: '#hero' },
   { id: 'event-info', label: t.value.navEvent, href: '#event-info' },
+  { id: 'detailed-program', label: t.value.navProgram, href: '#detailed-program' },
   { id: 'about', label: t.value.navAbout, href: '#about' },
   { id: 'why-ad-astra', label: t.value.navWhy, href: '#why-ad-astra' },
-  { id: 'program', label: t.value.navProgram, href: '#program' },
   { id: 'news', label: t.value.navNews, href: '#news' },
   { id: 'organizers', label: t.value.navOrganizers, href: '#organizatoriai' },
-  { id: 'partners', label: t.value.navPartners, href: '#partners' },
+  // { id: 'partners', label: t.value.navPartners, href: '#partners' },
 ])
 
 const toggleMenu = () => {
@@ -99,7 +99,7 @@ onUnmounted(() => {
           />
         </svg>
       </button>
-      
+
       <!-- Spacer for language toggle positioning -->
       <div></div>
     </div>

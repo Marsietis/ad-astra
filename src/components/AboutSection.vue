@@ -13,39 +13,29 @@ const { sectionRef, isVisible } = useScrollAnimation()
     class="min-h-screen flex items-center justify-center py-16 lg:py-20 opacity-0 translate-y-12 transition-all duration-1000 ease-out"
     :class="{ 'opacity-100 translate-y-0': isVisible }"
   >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pl-40 xl:pl-36">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[60vh]">
-        <div class="relative z-10 text-center lg:text-left">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
+      <div class="flex items-center justify-center min-h-[60vh]">
+        <div class="relative z-10 text-center lg:text-left max-w-5xl xl:max-w-6xl 2xl:max-w-7xl lg:pr-32 xl:pr-48 2xl:pr-64">
           <h2
             class="text-4xl lg:text-5xl xl:text-6xl font-walsheim text-white mb-6 lg:mb-8 uppercase"
           >
             {{ t.whatIsAdAstra }}
           </h2>
           <div
-            class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0"
+            class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6"
           >
             {{ t.aboutText1 }}
           </div>
           <div
-            class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0"
+            class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6"
           >
             {{ t.aboutText2 }}
           </div>
           <div
-            class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0"
+            class="text-base sm:text-lg lg:text-xl font-light text-white mb-4 lg:mb-6"
           >
             {{ t.aboutText3 }}
           </div>
-        </div>
-        <div
-          class="relative h-64 sm:h-80 lg:h-[400px] flex items-center justify-center order-first lg:order-last hidden md:block"
-        >
-          <div
-            class="absolute w-32 h-32 sm:w-40 sm:h-40 lg:w-52 lg:h-52 rounded-full top-1/4 right-1/6 lg:top-1/5 lg:right-1/10 animate-pulse -z-10 accent-glow"
-          ></div>
-          <div
-            class="absolute w-20 h-20 sm:w-24 sm:h-24 lg:w-36 lg:h-36 rounded-full top-3/5 right-1/3 lg:right-1/4 animate-pulse -z-10 accent-glow-secondary"
-          ></div>
         </div>
       </div>
     </div>

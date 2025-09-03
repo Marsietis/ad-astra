@@ -97,6 +97,16 @@ const translations = {
     navPartners: 'Partneriai',
     // Scroll hint
     scrollDown: 'Slinkti žemyn',
+    // Current event section
+    currentEventTitle: 'Dabar vyksta',
+    noCurrentEvent: 'Šiuo metu nevyksta joks renginys.',
+    eventCountdown: 'Iki renginio pradžios liko',
+    eventEnded: 'Renginys baigėsi',
+    eventEndedMessage: 'Ad Astra festivalis jau pasibaigė. Ačiū visiems dalyvavusiems!',
+    days: 'dienos',
+    hours: 'valandos',
+    minutes: 'minutės',
+    seconds: 'sekundės',
   },
   en: {
     subtitle: 'IN VILNIUS UNIVERSITY',
@@ -192,6 +202,16 @@ const translations = {
     navPartners: 'Partners',
     // Scroll hint
     scrollDown: 'Scroll down',
+    // Current event section
+    currentEventTitle: 'Happening now',
+    noCurrentEvent: 'There are no events currently in progress.',
+    eventCountdown: 'Time until event starts',
+    eventEnded: 'Event ended',
+    eventEndedMessage: 'The Ad Astra festival has ended. Thank you to everyone who participated!',
+    days: 'days',
+    hours: 'hours',
+    minutes: 'minutes',
+    seconds: 'seconds',
   },
 }
 

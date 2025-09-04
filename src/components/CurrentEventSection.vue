@@ -62,7 +62,7 @@ let timer: number | null = null
 let scrollTimeout: number | null = null
 
 const handleWheel = (event: WheelEvent) => {
-  // Handle scroll up to hero section
+  // Handle scroll up to hero section; allow default behavior on scroll down
   if (event.deltaY < 0) {
     event.preventDefault()
 
@@ -76,26 +76,6 @@ const handleWheel = (event: WheelEvent) => {
       const heroSection = document.getElementById('hero')
       if (heroSection) {
         heroSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        })
-      }
-    }, 100)
-  }
-  // Handle scroll down to detailed-program section
-  else if (event.deltaY > 0) {
-    event.preventDefault()
-
-    // Clear any existing timeout
-    if (scrollTimeout) {
-      clearTimeout(scrollTimeout)
-    }
-
-    // Add a small delay to prevent too rapid scrolling
-    scrollTimeout = setTimeout(() => {
-      const detailedProgramSection = document.getElementById('detailed-program')
-      if (detailedProgramSection) {
-        detailedProgramSection.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
         })

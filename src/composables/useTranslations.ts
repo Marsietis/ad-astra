@@ -88,6 +88,7 @@ const translations = {
     programNote: 'Programa gali keistis. Sekite naujausius pranešimus socialiniuose tinkluose.',
     // Navigation
     navHome: 'Pradžia',
+    navCurrentEvent: 'Dabar vyksta',
     navAbout: 'Apie',
     navEvent: 'Renginys',
     navWhy: 'Kodėl',
@@ -193,6 +194,7 @@ const translations = {
     programNote: 'Program may change. Follow the latest announcements on social networks.',
     // Navigation
     navHome: 'Home',
+    navCurrentEvent: 'Current Event',
     navAbout: 'About',
     navEvent: 'Event',
     navWhy: 'Why',

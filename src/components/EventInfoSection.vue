@@ -20,9 +20,9 @@ const handleWheel = (event: WheelEvent) => {
 
     // Add a small delay to prevent too rapid scrolling
     scrollTimeout = setTimeout(() => {
-      const heroSection = document.getElementById('hero')
-      if (heroSection) {
-        heroSection.scrollIntoView({
+      const aboutSection = document.getElementById('about')
+      if (aboutSection) {
+        aboutSection.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
         })

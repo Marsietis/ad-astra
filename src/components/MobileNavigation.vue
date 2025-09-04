@@ -9,12 +9,13 @@ const activeSection = ref('hero')
 
 const navigationItems = computed(() => [
   { id: 'hero', label: t.value.navHome, href: '#hero' },
-  { id: 'event-info', label: t.value.navEvent, href: '#event-info' },
+  { id: 'current-events', label: t.value.navCurrentEvent, href: '#current-events' },
   { id: 'detailed-program', label: t.value.navProgram, href: '#detailed-program' },
+  { id: 'event-info', label: t.value.navEvent, href: '#event-info' },
   { id: 'about', label: t.value.navAbout, href: '#about' },
   { id: 'why-ad-astra', label: t.value.navWhy, href: '#why-ad-astra' },
   { id: 'news', label: t.value.navNews, href: '#news' },
-  { id: 'organizers', label: t.value.navOrganizers, href: '#organizatoriai' },
+  { id: 'organizatoriai', label: t.value.navOrganizers, href: '#organizatoriai' },
   // { id: 'partners', label: t.value.navPartners, href: '#partners' },
 ])
 

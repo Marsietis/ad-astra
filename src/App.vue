@@ -24,10 +24,9 @@ useBackgroundAnimations()
     <MobileNavigation />
     <LanguageToggle />
     <HeroSection />
-    <EventInfoSection />
-    <DetailedProgramSection />
     <CurrentEventSection />
-
+    <DetailedProgramSection />
+    <EventInfoSection />
     <AboutSection />
 
     <!-- Floating decorative elements -->

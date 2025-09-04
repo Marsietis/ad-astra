@@ -59,6 +59,50 @@ function parseTimeRange(range: string): { start: number; end: number } | null {
 
 const currentDateTime = ref<Date>(new Date())
 let timer: number | null = null
+let scrollTimeout: number | null = null
+
+const handleWheel = (event: WheelEvent) => {
+  // Handle scroll up to hero section
+  if (event.deltaY < 0) {
+    event.preventDefault()
+
+    // Clear any existing timeout
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout)
+    }
+
+    // Add a small delay to prevent too rapid scrolling
+    scrollTimeout = setTimeout(() => {
+      const heroSection = document.getElementById('hero')
+      if (heroSection) {
+        heroSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      }
+    }, 100)
+  }
+  // Handle scroll down to detailed-program section
+  else if (event.deltaY > 0) {
+    event.preventDefault()
+
+    // Clear any existing timeout
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout)
+    }
+
+    // Add a small delay to prevent too rapid scrolling
+    scrollTimeout = setTimeout(() => {
+      const detailedProgramSection = document.getElementById('detailed-program')
+      if (detailedProgramSection) {
+        detailedProgramSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      }
+    }, 100)
+  }
+}
 
 // Get current time in Vilnius timezone
 const getCurrentVilniusTime = () => {
@@ -82,7 +126,7 @@ const eventStatus = computed(() => {
   const today = currentVilniusDate.value
   const todayDateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate())
   const eventDateOnly = new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate())
-  
+
   if (todayDateOnly < eventDateOnly) {
     return 'before'
   } else if (todayDateOnly.getTime() === eventDateOnly.getTime()) {
@@ -94,24 +138,24 @@ const eventStatus = computed(() => {
 
 const timeUntilEvent = computed(() => {
   if (eventStatus.value !== 'before') return null
-  
+
   const now = currentVilniusDate.value
   const eventStart = new Date(2025, 8, 5, 13, 0, 0) // September 5, 2025, 13:00
   const diff = eventStart.getTime() - now.getTime()
-  
+
   if (diff <= 0) return null
-  
+
   const days = Math.floor(diff / (1000 * 60 * 60 * 24))
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
   const seconds = Math.floor((diff % (1000 * 60)) / 1000)
-  
+
   return { days, hours, minutes, seconds }
 })
 
 const formattedDateTime = computed(() => {
   const locale = currentLanguage.value === 'lt' ? 'lt-LT' : 'en-US'
-  
+
   const dateOptions: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'long',
@@ -119,7 +163,7 @@ const formattedDateTime = computed(() => {
     weekday: 'long',
     timeZone: 'Europe/Vilnius'
   }
-  
+
   const timeOptions: Intl.DateTimeFormatOptions = {
     hour: '2-digit',
     minute: '2-digit',
@@ -127,7 +171,7 @@ const formattedDateTime = computed(() => {
     hour12: false,
     timeZone: 'Europe/Vilnius'
   }
-  
+
   return {
     date: currentDateTime.value.toLocaleDateString(locale, dateOptions),
     time: currentDateTime.value.toLocaleTimeString(locale, timeOptions)
@@ -136,7 +180,7 @@ const formattedDateTime = computed(() => {
 
 const currentEvents = computed(() => {
   if (eventStatus.value !== 'during') return []
-  
+
   const current = nowMinutes.value
   const results: Array<{ courtyard: string; time: string; name: string }> = []
   for (const courtyard of programSchedule.value) {
@@ -158,10 +202,20 @@ onMounted(() => {
     currentDateTime.value = d
     currentVilniusDate.value = getCurrentVilniusDate()
   }, 1000) // update every second for accurate time display
+
+  if (sectionRef.value) {
+    sectionRef.value.addEventListener('wheel', handleWheel, { passive: false })
+  }
 })
 
 onUnmounted(() => {
   if (timer) window.clearInterval(timer)
+  if (sectionRef.value) {
+    sectionRef.value.removeEventListener('wheel', handleWheel)
+  }
+  if (scrollTimeout) {
+    clearTimeout(scrollTimeout)
+  }
 })
 </script>
 

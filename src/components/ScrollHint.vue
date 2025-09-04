@@ -41,8 +41,9 @@ let currentSection = 0
 
 const sections = [
   'hero',
-  'event-info',
+  'current-events',
   'detailed-program',
+  'event-info',
   'about',
   'why-ad-astra',
   'news',
@@ -52,7 +53,7 @@ const sections = [
 
 const startTimer = () => {
   if (scrollTimer) clearTimeout(scrollTimer)
-  
+
   scrollTimer = setTimeout(() => {
     // Only show hint if we're not at the last section
     if (currentSection < sections.length - 1) {
@@ -71,33 +72,33 @@ const hideHint = () => {
 
 const handleScroll = () => {
   const currentScrollY = window.scrollY
-  
+
   // Hide hint when user scrolls
   if (Math.abs(currentScrollY - lastScrollY) > 50) {
     hideHint()
     lastScrollY = currentScrollY
   }
-  
+
   // Determine current section
   const windowHeight = window.innerHeight
   const scrollProgress = currentScrollY + windowHeight / 2
-  
+
   currentSection = Math.floor(scrollProgress / windowHeight)
   currentSection = Math.max(0, Math.min(currentSection, sections.length - 1))
-  
+
   // Restart timer after scroll stops
   startTimer()
 }
 
 const scrollToNext = () => {
   hideHint()
-  
+
   const nextSectionIndex = Math.min(currentSection + 1, sections.length - 1)
   const nextSectionId = sections[nextSectionIndex]
   const nextSection = document.getElementById(nextSectionId)
-  
+
   if (nextSection) {
-    nextSection.scrollIntoView({ 
+    nextSection.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     })
@@ -107,7 +108,7 @@ const scrollToNext = () => {
 onMounted(() => {
   // Start timer immediately
   startTimer()
-  
+
   // Add scroll listener with throttling
   let ticking = false
   const throttledScroll = () => {
@@ -119,9 +120,9 @@ onMounted(() => {
       ticking = true
     }
   }
-  
+
   window.addEventListener('scroll', throttledScroll, { passive: true })
-  
+
   // Hide hint on user interaction
   document.addEventListener('click', hideHint)
   document.addEventListener('keydown', hideHint)

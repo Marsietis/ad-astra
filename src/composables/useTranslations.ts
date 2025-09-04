@@ -65,6 +65,12 @@ const translations = {
     partnershipText: 'Norite tapti partneru? Susisiekite su mumis ir kartu kurkime puikų renginį!',
     contactEmail: 'adastra@vusa.lt',
     organizatoriaiTitle: 'Organizatoriai',
+    // Teams links section
+    teamsLinksTitle: 'Vertimas',
+    teamsLinksSubtitle: 'Festivalio metu vyksta gyvas vertimas. Prisijunkite prie kiemų transliacijų:',
+    onlineWithInterpretation: 'Su vertimu',
+    teamsJoinDescription: 'Paspauskite, kad prisijungtumėte per Microsoft Teams.',
+    joinMeeting: 'Prisijungti',
     // Detailed Program
     detailedProgramTitle: 'Detalus renginių tvarkaraštis',
     detailedProgramDescription: 'Išsamus festivalo programos išdėstymas pagal kiekvieną kiemą ir laiko tarpą:',
@@ -93,6 +99,7 @@ const translations = {
     navEvent: 'Renginys',
     navWhy: 'Kodėl',
     navProgram: 'Programa',
+    navInterpretation: 'Vertimas',
     navNews: 'Naujienos',
     navOrganizers: 'Organizatoriai',
     navPartners: 'Partneriai',
@@ -171,6 +178,12 @@ const translations = {
       "Want to become a partner? Contact us and let's create a great event together!",
     contactEmail: 'adastra@vusa.lt',
     organizatoriaiTitle: 'Organizers',
+    // Teams links section
+    teamsLinksTitle: 'Interpretation',
+    teamsLinksSubtitle: 'During the festival, live interpretation will available. Join the courtyard streams:',
+    onlineWithInterpretation: 'With interpretation',
+    teamsJoinDescription: 'Click to join via Microsoft Teams.',
+    joinMeeting: 'Join meeting',
     // Detailed Program
     detailedProgramTitle: 'Detailed Event Schedule',
     detailedProgramDescription: 'Comprehensive festival program layout by courtyard and time slot:',
@@ -199,6 +212,7 @@ const translations = {
     navEvent: 'Event',
     navWhy: 'Why',
     navProgram: 'Program',
+    navInterpretation: 'Interpretation',
     navNews: 'News',
     navOrganizers: 'Organizers',
     navPartners: 'Partners',

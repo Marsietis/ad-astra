@@ -7,6 +7,7 @@ import AboutSection from '@/components/AboutSection.vue'
 import EventInfoSection from '@/components/EventInfoSection.vue'
 import WhyAdAstraSection from '@/components/WhyAdAstraSection.vue'
 import DetailedProgramSection from '@/components/DetailedProgramSection.vue'
+import TeamsLinksSection from '@/components/TeamsLinksSection.vue'
 import CurrentEventSection from '@/components/CurrentEventSection.vue'
 import NewsSection from '@/components/NewsSection.vue'
 // import PartnersSection from '@/components/PartnersSection.vue'
@@ -26,6 +27,7 @@ useBackgroundAnimations()
     <HeroSection />
     <CurrentEventSection />
     <DetailedProgramSection />
+    <TeamsLinksSection />
     <EventInfoSection />
     <AboutSection />
 

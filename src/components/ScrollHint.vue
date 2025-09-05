@@ -43,6 +43,7 @@ const sections = [
   'hero',
   'current-events',
   'detailed-program',
+  'map',
   'teams-links',
   'event-info',
   'about',

@@ -31,6 +31,7 @@ const translations = {
     whyAdAstraText:
       'Nes pradedant nuo čia kylama į žvaigždes! Taigi, ko tu lauki? Mes atsakytume – Tavęs! Nesvarbu ar esi šviežiai įstojęs (-usi) ar studentas (-ė), VU bendruomenės narys (-ė) ar svečias Vilniuje, nesi dalyvavęs ar gal nė vieno festivalio nepraleidęs (-usi) – „Ad astroje" ko nors įdomaus atras kiekvienas (-a)!',
     programTitle: 'Programa',
+    mapTitle: 'Žemėlapis',
     scientificZone: 'Moksliniai pranešimai',
     scientificZoneDesc:
       'Studentai pristatys savo tyrimų darbus, projektus ir inovatyvius sprendimus. Puiki galimybė sužinoti, kokius mokslinius pasiekimus daro mūsų bendruomenės nariai.',
@@ -99,6 +100,7 @@ const translations = {
     navEvent: 'Renginys',
     navWhy: 'Kodėl',
     navProgram: 'Programa',
+    navMap: 'Žemėlapis',
     navInterpretation: 'Vertimas',
     navNews: 'Naujienos',
     navOrganizers: 'Organizatoriai',
@@ -142,6 +144,7 @@ const translations = {
     whyAdAstraText:
       'Because this is where the journey to the stars begins! So, what are you waiting for? We would say – you! Whether you are a new student or a current student, a member of the VU community or a guest in Vilnius, whether you have never participated or have never missed a single festival – everyone will find something interesting at Ad Astro!',
     programTitle: 'Program',
+    mapTitle: 'Map',
     scientificZone: 'Scientific Presentations',
     scientificZoneDesc:
       'Students will present their research work, projects and innovative solutions. A great opportunity to learn about the scientific achievements of our community members.',
@@ -212,6 +215,7 @@ const translations = {
     navEvent: 'Event',
     navWhy: 'Why',
     navProgram: 'Program',
+    navMap: 'Map',
     navInterpretation: 'Interpretation',
     navNews: 'News',
     navOrganizers: 'Organizers',

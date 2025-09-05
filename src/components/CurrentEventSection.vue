@@ -6,7 +6,7 @@ import { useScrollAnimation } from '@/composables/useScrollAnimation'
 type ProgramEvent = { time: string; event: string }
 type CourtyardProgram = { courtyard: string; events: ProgramEvent[] }
 
-const { t, currentLanguage } = useTranslations()
+const { t } = useTranslations()
 const { sectionRef, isVisible } = useScrollAnimation()
 
 // Keep the schedule definition consistent with DetailedProgramSection
@@ -57,7 +57,7 @@ function parseTimeRange(range: string): { start: number; end: number } | null {
   return { start, end }
 }
 
-const currentDateTime = ref<Date>(new Date())
+const currentInstant = ref<Date>(new Date())
 let timer: number | null = null
 let scrollTimeout: number | null = null
 
@@ -111,38 +111,24 @@ const getCurrentVilniusTime = () => {
   return vilniusTime.getHours() * 60 + vilniusTime.getMinutes()
 }
 
-const getCurrentVilniusDate = () => {
-  const now = new Date()
-  return new Date(now.toLocaleString("en-US", {timeZone: "Europe/Vilnius"}))
-}
-
 const nowMinutes = ref<number>(getCurrentVilniusTime())
-const currentVilniusDate = ref<Date>(getCurrentVilniusDate())
 
-// Event date is September 5, 2025
-const eventDate = new Date(2025, 8, 5) // Month is 0-indexed, so 8 = September
+// Event window on September 5, 2025 from 13:00 until 22:00 (Vilnius time, EEST UTC+03)
+const eventStart = new Date('2025-09-05T13:00:00+03:00')
+const eventEnd = new Date('2025-09-05T22:00:00+03:00')
 
 const eventStatus = computed(() => {
-  const today = currentVilniusDate.value
-  const todayDateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate())
-  const eventDateOnly = new Date(eventDate.getFullYear(), eventDate.getMonth(), eventDate.getDate())
-
-  if (todayDateOnly < eventDateOnly) {
-    return 'before'
-  } else if (todayDateOnly.getTime() === eventDateOnly.getTime()) {
-    return 'during'
-  } else {
-    return 'after'
-  }
+  const now = currentInstant.value
+  if (now.getTime() < eventStart.getTime()) return 'before'
+  if (now.getTime() >= eventStart.getTime() && now.getTime() < eventEnd.getTime()) return 'during'
+  return 'after'
 })
 
 const timeUntilEvent = computed(() => {
   if (eventStatus.value !== 'before') return null
 
-  const now = currentVilniusDate.value
-  const eventStart = new Date(2025, 8, 5, 13, 0, 0) // September 5, 2025, 13:00
+  const now = currentInstant.value
   const diff = eventStart.getTime() - now.getTime()
-
   if (diff <= 0) return null
 
   const days = Math.floor(diff / (1000 * 60 * 60 * 24))
@@ -153,30 +139,7 @@ const timeUntilEvent = computed(() => {
   return { days, hours, minutes, seconds }
 })
 
-const formattedDateTime = computed(() => {
-  const locale = currentLanguage.value === 'lt' ? 'lt-LT' : 'en-US'
-
-  const dateOptions: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    weekday: 'long',
-    timeZone: 'Europe/Vilnius'
-  }
-
-  const timeOptions: Intl.DateTimeFormatOptions = {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
-    timeZone: 'Europe/Vilnius'
-  }
-
-  return {
-    date: currentDateTime.value.toLocaleDateString(locale, dateOptions),
-    time: currentDateTime.value.toLocaleTimeString(locale, timeOptions)
-  }
-})
+// (Removed unused formattedDateTime)
 
 const currentEvents = computed(() => {
   if (eventStatus.value !== 'during') return []
@@ -197,10 +160,8 @@ const currentEvents = computed(() => {
 
 onMounted(() => {
   timer = window.setInterval(() => {
-    const d = new Date()
     nowMinutes.value = getCurrentVilniusTime()
-    currentDateTime.value = d
-    currentVilniusDate.value = getCurrentVilniusDate()
+    currentInstant.value = new Date()
   }, 1000) // update every second for accurate time display
 
   if (sectionRef.value) {
@@ -285,8 +246,7 @@ onUnmounted(() => {
         <!-- After Event: Event Ended -->
         <div v-else class="text-center">
           <div class="p-8 lg:p-12 max-w-2xl mx-auto">
-            <div class="text-2xl lg:text-3xl text-white font-walsheim font-bold mb-4 uppercase">{{ t.eventEnded }}</div>
-            <div class="text-lg lg:text-xl text-white/80 font-medium">{{ t.eventEndedMessage }}</div>
+            <div class="text-lg lg:text-2xl text-white/80 font-medium">{{ t.eventEndedMessage }}</div>
           </div>
         </div>
       </div>

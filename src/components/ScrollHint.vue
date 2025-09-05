@@ -43,6 +43,7 @@ const sections = [
   'hero',
   'current-events',
   'detailed-program',
+  'teams-links',
   'event-info',
   'about',
   'why-ad-astra',

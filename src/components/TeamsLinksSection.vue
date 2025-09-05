@@ -6,8 +6,8 @@ const { t } = useTranslations()
 const { sectionRef, isVisible } = useScrollAnimation()
 
 // TODO: Replace placeholder links with actual Teams meeting URLs if provided
-const vuDidysisKiemasUrl = 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzU2NjliMjEtY2EyOC00Y2MwLTk4NTEtZDZhZGUyYzcwMTM1%40thread.v2/0?context=%7b%22Tid%22%3a%227ac8575d-ef21-4c2f-a125-2c7a2ddb24d6%22%2c%22Oid%22%3a%224344d8b7-f078-4fef-823e-bade9eef348d%22%7d'
-const sarbievijausKiemasUrl = 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzhmNWUwOGUtYTJhMy00MDRiLWI1YjYtNmEzZWRiNTVmMmU3%40thread.v2/0?context=%7b%22Tid%22%3a%227ac8575d-ef21-4c2f-a125-2c7a2ddb24d6%22%2c%22Oid%22%3a%224344d8b7-f078-4fef-823e-bade9eef348d%22%7d'
+const vuDidysisKiemasUrl = 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTgxZDljYTUtMDI2Zi00YzQ3LWE4NmQtNDdhY2QxNzE5ZmYz%40thread.v2/0?context=%7b%22Tid%22%3a%2282c51a82-548d-43ca-bcf9-bf4b7eb1d012%22%2c%22Oid%22%3a%22926129e3-55f9-4bb4-a1e8-9000e4ab6ccd%22%7d'
+const sarbievijausKiemasUrl = 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZTNjMTU0MjAtMmQ4ZS00ZWNiLTlhMjMtYWM2ZTE4NmQxZWE1%40thread.v2/0?context=%7b%22Tid%22%3a%2282c51a82-548d-43ca-bcf9-bf4b7eb1d012%22%2c%22Oid%22%3a%22926129e3-55f9-4bb4-a1e8-9000e4ab6ccd%22%7d'
 </script>
 
 <template>

@@ -94,8 +94,8 @@ const getCurrentVilniusTime = () => {
 const nowMinutes = ref<number>(getCurrentVilniusTime())
 
 // Event window on September 5, 2025 from 13:00 until 22:00 (Vilnius time, EEST UTC+03)
-const eventStart = new Date('2025-09-05T13:00:00+03:00')
-const eventEnd = new Date('2025-09-05T22:00:00+03:00')
+const eventStart = new Date('2026-09-05T13:00:00+03:00')
+const eventEnd = new Date('2026-09-05T22:00:00+03:00')
 
 const eventStatus = computed(() => {
   const now = currentInstant.value
